@@ -16,6 +16,17 @@
     --shadow-large: 0 8px 25px rgba(0, 0, 0, 0.08); /* Larger shadow */
     --light-bg: #f7f7f7; /* Light background for gradient */
     --light-text: #ccc; /* Light text color */
+    
+    /* New blue color variables */
+    --blue-dark: #0a2463; /* Deep blue */
+    --blue-medium: #1e56a0; /* Medium blue */
+    --blue-light: #4d96ff; /* Light blue */
+    --blue-very-light: #d6e4ff; /* Very light blue */
+    --gradient-blue: linear-gradient(135deg, var(--blue-dark), var(--blue-medium));
+    --gradient-blue-light: linear-gradient(135deg, var(--blue-light), var(--blue-very-light));
+    
+    /* Container width */
+    --container-width: 1200px;
 }
 
 /* Basic Reset & Body */
@@ -31,7 +42,8 @@ body {
     padding: 0;
     line-height: 1.6;
     color: var(--dark-text);
-    background-color: var(--light-gray);
+    background: var(--gradient-blue); /* Blue gradient background */
+    background-attachment: fixed; /* Keep gradient fixed while scrolling */
     padding-top: 70px; /* Add padding to body to offset fixed header height */
 }
 
@@ -97,30 +109,33 @@ body {
 
 #main-header nav ul li a:hover,
 #main-header nav ul li a.active { /* Style for active link (add JS later if needed) */
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--blue-light); /* Change to blue color on hover */
+    border-bottom: 2px solid var(--blue-light); /* Change border to blue */
 }
 
 /* Style for the Call-to-Action button in nav */
 #main-header nav ul li a.nav-cta {
-    background-color: var(--primary-color);
+    background-color: var(--blue-medium);
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
     border-bottom: none; /* Remove border from CTA */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #main-header nav ul li a.nav-cta:hover {
-    background-color: #111; /* Darker shade on hover */
+    background-color: var(--blue-light); /* Lighter blue on hover */
     color: var(--white);
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 /* Container */
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 1; /* Ensure content is above background */
 }
 
 /* Headings & Text */
@@ -222,11 +237,17 @@ nav {
 
 /* Sections */
 section {
-    padding: var(--default-padding);
+    padding: 4rem 2rem;
+    margin: 1rem 0;
+    background-color: var(--white);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-large);
 }
 
+/* Add subtle blue accent to even sections */
 section:nth-child(even) {
-    background-color: var(--white); /* Alternate white background */
+    background-color: var(--blue-very-light);
+    background: linear-gradient(to bottom right, var(--white), var(--blue-very-light));
 }
 
 /* Hero Section */
