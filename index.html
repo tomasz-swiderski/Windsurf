@@ -9,9 +9,28 @@
     <!-- Add Google Analytics code here -->
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>...</nav>
-    
+
+    <!-- Navigation Bar -->
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="#hero">FIXme</a> <!-- Or your logo image -->
+            </div>
+            <ul>
+                <li><a href="#hero">Start</a></li>
+                <li><a href="#problem-solution">Problem</a></li>
+                <li><a href="#how-it-works">Jak Działa</a></li>
+                <li><a href="#benefits">Korzyści</a></li>
+                <li><a href="#features">Funkcje</a></li>
+                <li><a href="#testimonials">Opinie</a></li>
+                <li><a href="#pricing">Cennik</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#lead-magnet" class="nav-cta">Demo</a></li> <!-- Example CTA -->
+            </ul>
+        </nav>
+    </header>
+    <!-- End Navigation Bar -->
+
     <!-- Hero Section -->
     <section id="hero">
         <h1>Skończ z Niskim Morale: Buduj Zespół Pełen Energii</h1>
@@ -19,6 +38,9 @@
         <div class="cta-buttons">
             <a href="#demo" class="btn primary">Rozpocznij Zwiększanie Motywacji Teraz</a>
             <a href="#how-it-works" class="btn secondary">Zobacz Jak to Działa</a>
+        </div>
+        <div class="hero-image">
+             <img src="Public/hero zdjęcie.svg" alt="Grafika przedstawiająca interfejs platformy FIXme">
         </div>
         <div class="social-proof">
             <!-- Client logos and testimonial snippet -->
@@ -28,78 +50,81 @@
     <!-- Problem/Solution Section -->
     <section id="problem-solution">
         <div class="container">
-            <div class="problem" data-aos="fade-up">
-                <h2>Wyzwania Dzisiejszych Zespołów</h2>
-                <div class="problem-items">
-                    <div class="problem-item">
-                        <i class="fas fa-user-clock"></i>
-                        <h3>Pracownicy "odbębniają" swoje zadania</h3>
-                        <p>Brak motywacji prowadzi do minimalnego zaangażowania i niskiej jakości pracy.</p>
+            <h2>Wyzwania Zespołów i Rozwiązanie FIXme</h2> 
+            <div class="problem-solution-grid"> 
+                <div class="problem-solution-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-user-clock"></i> 
                     </div>
-                    <div class="problem-item">
-                        <i class="fas fa-users-slash"></i>
-                        <h3>Trudna integracja w pracy zdalnej</h3>
-                        <p>Zespoły rozproszone geograficznie tracą poczucie wspólnego celu i przynależności.</p>
-                    </div>
-                    <div class="problem-item">
-                        <i class="fas fa-chart-line-down"></i>
-                        <h3>Wysoka rotacja pracowników</h3>
-                        <p>Niezaangażowani pracownicy szybciej odchodzą, generując koszty rekrutacji i wdrożenia.</p>
-                    </div>
+                    <h3>Pracownicy "odbębniają" zadania</h3>
+                    <p>Brak motywacji prowadzi do minimalnego zaangażowania i niskiej jakości pracy.</p>
                 </div>
-            </div>
-            <div class="solution" data-aos="fade-up" data-aos-delay="200">
-                <h2>FIXme: Twój Partner w Budowaniu Zaangażowania</h2>
-                <p>FIXme to nie tylko narzędzie, ale partner wspierający liderów w tworzeniu środowiska pracy, które inspiruje, motywuje i docenia każdego członka zespołu.</p>
-                <div class="solution-image">
-                    <!-- Replace with actual image path -->
-                    <img src="images/solution-image.png" alt="FIXme jako rozwiązanie">
+                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="100">
+                     <div class="card-icon">
+                        <i class="fas fa-users-slash"></i>
+                    </div>
+                    <h3>Trudna integracja w pracy zdalnej</h3>
+                    <p>Zespoły rozproszone geograficznie tracą poczucie wspólnego celu i przynależności.</p>
+                </div>
+                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="200">
+                     <div class="card-icon">
+                        <i class="fas fa-chart-line-down"></i>
+                    </div>
+                    <h3>Wysoka rotacja pracowników</h3>
+                    <p>Niezaangażowani pracownicy szybciej odchodzą, generując koszty rekrutacji i wdrożenia.</p>
+                </div>
+                <div class="problem-solution-card solution-card" data-aos="fade-up" data-aos-delay="300">
+                     <div class="card-icon">
+                        <i class="fas fa-rocket"></i> 
+                    </div>
+                    <h3>FIXme: Twój Partner</h3>
+                    <p>FIXme wspiera liderów w tworzeniu środowiska pracy, które inspiruje, motywuje i docenia każdego.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
+    <!-- How It Works Section - Updated -->
     <section id="how-it-works">
         <div class="container">
-            <h2>Jak Działa FIXme?</h2>
-            <div class="steps">
-                <div class="step" data-aos="fade-up">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Stwórz Wyzwania i Cele</h3>
-                        <p>Definiuj indywidualne i zespołowe wyzwania dopasowane do celów firmy i potrzeb pracowników.</p>
-                        <div class="step-animation">
-                            <!-- Replace with actual gif/image path -->
-                            <img src="images/step1.gif" alt="Tworzenie wyzwań w FIXme">
-                        </div>
-                    </div>
+            <h2>Jak Łatwo Wdrożyć Aktywne Przerwy z FIXme?</h2> <!-- New Title -->
+            <div class="how-it-works-grid"> <!-- New Grid Container -->
+
+                <!-- Step 1: Setup -->
+                <div class="how-it-works-item text-item" data-aos="fade-right">
+                    <h3>Błyskawiczna Integracja</h3>
+                    <p>Zsynchronizuj FIXme z kalendarzem zespołu w kilka minut. Automatyczne przypomnienia o mikroprzerwach inteligentnie dopasują się do harmonogramu pracy.</p>
+                    <!-- Add key benefits/icons here if needed -->
                 </div>
-                <div class="step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Motywuj i Angażuj</h3>
-                        <p>Wykorzystaj system odznak, nagród i uznania, aby motywować pracowników do aktywnego udziału.</p>
-                        <div class="step-animation">
-                            <!-- Replace with actual gif/image path -->
-                            <img src="images/step2.gif" alt="System motywacyjny FIXme">
-                        </div>
-                    </div>
+                <div class="how-it-works-item visual-item visual-item-1" data-aos="fade-left">
+                    <!-- Replace with actual image path -->
+                    <img src="C:\Users\Admin\Desktop\Run AI\Windsurf\Public\integracja z kalendarzem.jpg" alt="Integracja FIXme z kalendarzem">
                 </div>
-                <div class="step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Monitoruj i Optymalizuj</h3>
-                        <p>Śledź postępy, analizuj zaangażowanie i dostosowuj strategie w oparciu o dane.</p>
-                        <div class="step-animation">
-                            <!-- Replace with actual gif/image path -->
-                            <img src="images/step3.gif" alt="Analityka w FIXme">
-                        </div>
-                    </div>
+
+                <!-- Step 2: Personalization -->
+                <div class="how-it-works-item visual-item visual-item-2" data-aos="fade-right">
+                    <!-- Replace with actual image path -->
+                    <img src="C:\Users\Admin\Desktop\Run AI\Windsurf\Public\spersonalizowane mikro przerwy.png" alt="Personalizowane ćwiczenia w FIXme">
                 </div>
+                <div class="how-it-works-item text-item" data-aos="fade-left">
+                    <h3>Spersonalizowane Mikroprzerwy</h3>
+                    <p>Dostarcz pracownikom dopasowane plany krótkich ćwiczeń, rozciągania, automasażu czy jogi oczu – idealne na regenerację w ciągu dnia pracy.</p>
+                </div>
+
+                <!-- Step 3: Motivation -->
+                <div class="how-it-works-item text-item" data-aos="fade-right">
+                    <h3>Motywacja przez Grywalizację</h3>
+                    <p>Punkty za aktywność, odznaki za regularność i przyjazne rankingi skutecznie zachęcają do budowania zdrowych nawyków w angażujący sposób.</p>
+                </div>
+                <div class="how-it-works-item visual-item visual-item-3" data-aos="fade-left">
+                    <!-- Replace with actual image path -->
+                    <img src="C:\Users\Admin\Desktop\Run AI\Windsurf\Public\grywalizacja.jpg" alt="Grywalizacja i odznaki w FIXme">
+                </div>
+
             </div>
         </div>
     </section>
+    <!-- End How It Works Section -->
 
     <!-- Benefits Section -->
     <section id="benefits">
@@ -185,51 +210,50 @@
     <!-- Testimonials Section -->
     <section id="testimonials">
         <div class="container">
-            <h2>Co Mówią Nasi Klienci</h2>
+            <h2>Historie Sukcesu Naszych Klientów</h2> 
             <div class="testimonials-grid">
+                <!-- Case Study 1 -->
                 <div class="testimonial" data-aos="fade-up">
-                    <div class="testimonial-content">
-                        <p>"Po wdrożeniu FIXme zauważyliśmy wzrost uczestnictwa w wewnętrznych inicjatywach o 30%."</p>
+                    <div class="testimonial-logo">
+                        <!-- Replace with actual logo path -->
+                        <img src="images/logo-firma-tech.png" alt="Logo Firma Tech SA">
                     </div>
-                    <div class="testimonial-author">
-                        <!-- Replace with actual image path -->
-                        <img src="images/testimonial1.jpg" alt="Zdjęcie klienta">
-                        <div>
-                            <h4>Tomasz Nowak</h4>
-                            <p>Dyrektor HR, ABC Company</p>
-                        </div>
+                    <div class="testimonial-content">
+                        <h4>Firma Tech SA (Branża IT)</h4>
+                        <p>"Dzięki FIXme wskaźnik zaangażowania naszych zespołów deweloperskich wzrósł o 25% w ciągu 6 miesięcy. Zauważyliśmy też spadek fluktuacji."</p>
+                    </div>
+                    <div class="testimonial-results">
+                        <span>+25%</span> Zaangażowania | <span>-10%</span> Rotacji
                     </div>
                 </div>
+
+                <!-- Case Study 2 -->
                 <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-logo">
+                        <!-- Replace with actual logo path -->
+                        <img src="images/logo-finanse-corp.png" alt="Logo Finanse Corp">
+                    </div>
                     <div class="testimonial-content">
-                        <p>"FIXme pomogło nam zredukować rotację pracowników o 15% w ciągu pierwszego roku."</p>
+                        <h4>Finanse Corp (Sektor Finansowy)</h4>
+                        <p>"Platforma pomogła nam usprawnić komunikację między działami i wzmocnić kulturę doceniania, co przełożyło się na lepszą współpracę przy projektach."</p>
                     </div>
-                    <div class="testimonial-author">
-                        <!-- Replace with actual image path -->
-                        <img src="images/testimonial2.jpg" alt="Zdjęcie klienta">
-                        <div>
-                            <h4>Magdalena Kowalczyk</h4>
-                            <p>CEO, XYZ Solutions</p>
-                        </div>
+                    <div class="testimonial-results">
+                        <span>+40%</span> Pozytywnych opinii w ankiecie | Poprawa współpracy
                     </div>
                 </div>
-            </div>
-            <div class="trust-elements" data-aos="fade-up">
-                <div class="client-logos-large">
-                    <!-- Replace with actual image paths -->
-                    <img src="images/client1-large.png" alt="Logo Klienta 1">
-                    <img src="images/client2-large.png" alt="Logo Klienta 2">
-                    <img src="images/client3-large.png" alt="Logo Klienta 3">
-                </div>
-                <div class="trust-badges">
-                    <div class="trust-badge">
-                        <i class="fas fa-shield-alt"></i> Bezpieczeństwo Danych
+
+                <!-- Case Study 3 -->
+                 <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-logo">
+                        <!-- Replace with actual logo path -->
+                        <img src="images/logo-marketing-agency.png" alt="Logo Marketing Agency">
                     </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-headset"></i> Wsparcie 24/7
+                    <div class="testimonial-content">
+                        <h4>Marketing Agency (Agencja Kreatywna)</h4>
+                        <p>"FIXme stało się kluczowym narzędziem w naszym programie onboardingowym i rozwojowym, pomagając nowym pracownikom szybciej poczuć się częścią zespołu."</p>
                     </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-sync"></i> Gwarancja Satysfakcji
+                    <div class="testimonial-results">
+                        <span>+15%</span> Szybszy onboarding | Wyższa satysfakcja nowych pracowników
                     </div>
                 </div>
             </div>
