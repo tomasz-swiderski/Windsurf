@@ -49,9 +49,10 @@ body {
 
 #main-header nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center logo and menu block */
     align-items: center;
     height: 60px; /* Example fixed height, adjust as needed */
+    gap: 3rem; /* Add space between logo and menu list */
 }
 
 #main-header .logo a {
@@ -80,6 +81,10 @@ body {
 
 #main-header nav ul li {
     margin-left: 1.5rem;
+}
+
+#main-header nav ul li:first-child {
+    margin-left: 0;
 }
 
 #main-header nav ul li a {
@@ -632,26 +637,23 @@ section:nth-child(even) {
 
 /* Testimonials Section */
 #testimonials {
-    background-color: var(--light-gray); /* Match Problem/Solution background */
-    padding: 4rem 0;
+    padding: 6rem 0;
+    background-color: var(--white);
 }
 
 #testimonials h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--dark-text);
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.testimonial { /* Applying card styles */
-    background-color: var(--white);
+.testimonial {
+    background-color: var(--light-bg);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -663,52 +665,53 @@ section:nth-child(even) {
 
 .testimonial:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-medium);
 }
 
 .testimonial-logo {
-    margin-bottom: 1.5rem;
-    height: 50px; /* Set a fixed height for logos */
+    margin-bottom: 1.5rem; /* Space below logo */
+    min-height: 60px; /* Ensure space even if logo is small */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center logo horizontally */
+    align-items: center; /* Center logo vertically */
+    padding: 1rem 0; /* Add some vertical padding */
 }
 
 .testimonial-logo img {
-    max-height: 100%; /* Ensure logo fits within the height */
-    max-width: 150px; /* Limit logo width */
-    object-fit: contain; /* Maintain aspect ratio */
+    max-height: 65px; /* Increased logo height - adjust as needed */
+    max-width: 180px; /* Prevent logos from becoming too wide */
+    width: auto;
+    height: auto; /* Maintain aspect ratio */
+    filter: grayscale(80%); /* Apply grayscale effect */
+    transition: filter 0.3s ease; /* Smooth transition for hover */
 }
 
-.testimonial-content {
-    margin-bottom: 1.5rem; /* Space before results */
+.testimonial:hover .testimonial-logo img {
+    filter: grayscale(0%); /* Remove grayscale on card hover */
 }
 
 .testimonial-content h4 {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
     color: var(--dark-text);
+    margin-bottom: 0.75rem;
 }
 
 .testimonial-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-style: italic;
     color: var(--secondary-text);
-    font-style: italic; /* Optional: keep quotes italic */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1; /* Allow content to take available space */
 }
 
 .testimonial-results {
-    margin-top: auto; /* Push results to the bottom if needed */
     font-weight: bold;
     color: var(--primary-color);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
-    width: 100%; /* Make border full width */
+    margin-top: auto; /* Push results to the bottom */
 }
 
 .testimonial-results span {
-    /* Style individual result metrics if needed */
-    /* Example: */
-    /* display: inline-block; */
-    /* margin: 0 0.5rem; */
+    margin: 0 0.5rem; /* Add spacing around results */
 }
 
 /* Pricing Section */
