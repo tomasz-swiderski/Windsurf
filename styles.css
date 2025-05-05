@@ -155,7 +155,7 @@ a {
 }
 
 a:hover {
-    color: darken(var(--primary-color), 10%);
+    color: var(--secondary-color);
 }
 
 img {
@@ -259,11 +259,6 @@ section:nth-child(even) {
     max-width: 800px; /* Limit image size */
     border-radius: var(--border-radius);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Subtle shadow */
-}
-
-#hero .social-proof {
-    margin-top: 3rem;
-    /* Add styles for logos */
 }
 
 /* Problem/Solution Section - Updated for Card Layout */
@@ -615,11 +610,11 @@ section:nth-child(even) {
     font-size: 2.2rem; /* Icon size */
     color: var(--primary-color);
     margin-bottom: 1.2rem; /* Space below icon */
-    /* background-color: rgba(var(--primary-color-rgb), 0.1); /* Optional: Icon background circle */
-    /* padding: 1rem; */
-    /* border-radius: 50%; */
-    /* display: inline-block; */
-    /* line-height: 1; */
+    background-color: rgba(var(--primary-color-rgb), 0.1); /* Icon background circle */
+    padding: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
 }
 
 .features-grid .feature-item h4 {
@@ -650,6 +645,8 @@ section:nth-child(even) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-width: var(--container-width); /* Limit width */
+    margin: 0 auto; /* Center the grid */
 }
 
 .testimonial {
@@ -988,76 +985,146 @@ section:nth-child(even) {
 
 /* Footer */
 footer {
-    background-color: #333; /* Dark footer */
-    color: #ccc;
-    padding: 50px 0 20px 0;
-    font-size: 0.9rem;
+    background-color: var(--dark-text);
+    color: var(--light-gray);
+    padding-top: 4rem; /* Increase top padding */
+    margin-top: 4rem; /* Add space above footer */
 }
 
-footer a {
-    color: #eee;
+footer .container {
+    /* Remove old flex centering styles */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* text-align: center; */
 }
 
-footer a:hover {
-    color: var(--white);
-}
-
-footer .footer-content {
+/* Main footer content grid */
+.footer-main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gap between columns */
+    margin-bottom: 3rem; /* Space before bottom bar */
 }
 
-footer .footer-column h4 {
-    color: var(--white);
-    margin-bottom: 1rem;
+.footer-column {
+    padding: 0 10px; /* Optional padding within columns */
+}
+
+.footer-column h4 {
     font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    /* Optional: underline effect for titles */
+    /* &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--accent-color); 
+    } */
 }
 
-footer .footer-column ul {
+/* About Column */
+.footer-about .footer-logo {
+    margin-bottom: 1rem;
+    max-width: 150px; /* Limit logo size */
+}
+
+.footer-about .footer-logo img {
+    max-height: 45px; /* Adjust footer logo height */
+    width: auto;
+}
+
+.footer-about p {
+    color: var(--light-gray); /* Slightly lighter text */
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Links Column */
+.footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-footer .footer-column ul li {
-    margin-bottom: 0.5rem;
+.footer-links ul li {
+    margin-bottom: 0.75rem;
 }
 
-footer .footer-logo {
-    max-width: 120px;
-    margin-bottom: 1rem;
+.footer-links ul li a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
-footer .social-icons a {
-    color: #ccc;
-    margin-right: 15px;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-footer .social-icons a:hover {
+.footer-links ul li a:hover {
     color: var(--white);
+    padding-left: 5px; /* Subtle indent on hover */
 }
 
-footer .footer-bottom {
-    border-top: 1px solid #555;
-    padding-top: 20px;
+/* Social Column */
+.social-icons a {
+    color: var(--light-gray);
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Needed for transform */
+}
+
+.social-icons a:last-child {
+    margin-right: 0;
+}
+
+.social-icons a:hover {
+    color: var(--white);
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid var(--secondary-text); /* Separator line */
+    padding: 1.5rem 0;
     text-align: center;
-    font-size: 0.85rem;
-    color: #aaa;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
 }
 
-footer .footer-bottom p {
-    margin-bottom: 0.5rem;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr; /* Stack columns */
+        text-align: center; /* Center text in stacked columns */
+    }
+
+    .footer-column {
+        margin-bottom: 2rem; /* Add space between stacked columns */
+    }
+
+    .footer-about .footer-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
 }
 
-footer .footer-bottom a {
-    color: #ccc;
-    margin: 0 5px;
+/* Font Awesome Icons (if using) */
+
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
-/* --- Responsive Design --- */
+/* Responsive Design */
 
 /* Tablets */
 @media (max-width: 992px) {
@@ -1125,10 +1192,3 @@ footer .footer-bottom a {
         margin: 0 auto 1rem auto; /* Center logo */
     }
 }
-
-/* Add smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Font Awesome Icons (if using) */
