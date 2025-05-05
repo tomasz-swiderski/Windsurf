@@ -308,12 +308,37 @@ section:nth-child(even) {
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow like reference */
     text-align: center; /* Center text within card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .problem-solution-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px) scale(1.03); /* Add zoom effect */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    background-color: var(--blue-very-light); /* Subtle color change */
+}
+
+/* Add a subtle glow effect on hover */
+.problem-solution-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(77, 150, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.problem-solution-card:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .problem-solution-card .card-icon {
@@ -619,12 +644,20 @@ section:nth-child(even) {
     display: flex; /* Use flexbox for icon alignment */
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align items to the start */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden; /* Ensure content doesn't overflow during zoom */
+    position: relative; /* For potential overlay effects */
 }
 
 .features-grid .feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px) scale(1.03); /* Add subtle zoom effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    background-color: var(--white); /* Slightly lighter background */
+}
+
+.features-grid .feature-item:focus-within {
+    outline: 2px solid var(--blue-light); /* Focus outline for accessibility */
+    transform: translateY(-3px); /* Subtle lift */
 }
 
 .features-grid .feature-item i {
@@ -678,12 +711,34 @@ section:nth-child(even) {
     display: flex;
     flex-direction: column;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px) scale(1.02); /* Subtle zoom */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+    background-color: var(--white); /* Lighter background */
+}
+
+.testimonial:hover::before {
+    opacity: 1; /* Show subtle accent on hover */
+}
+
+/* Add subtle accent line at the top of testimonial cards */
+.testimonial::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-blue-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 .testimonial-logo {
