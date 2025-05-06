@@ -53,29 +53,32 @@
     <section id="problem-solution">
         <div class="container">
             <h2>Wyzwania HR w Motywowaniu Pracowników do Aktywności w Pracy</h2> 
-            <div class="problem-solution-grid"> 
-                <div class="problem-solution-card" data-aos="fade-up">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 20px;">
+                <!-- Problem cards in the top row -->
+                <div class="problem-solution-card" data-aos="fade-up" style="grid-column: 1 / 2;">
                     <div class="card-icon">
                         <i class="fas fa-clock"></i> 
                     </div>
                     <h3>Brak Czasu na Ruch w Ciągu Dnia</h3>
                     <p>Pracownicy czują presję obowiązków, przez co pomijają niezbędne przerwy na aktywność fizyczną.</p>
                 </div>
-                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="100" style="grid-column: 2 / 3;">
                      <div class="card-icon">
                         <i class="fas fa-battery-empty"></i>
                     </div>
                     <h3>Trudność w Utrzymaniu Motywacji do Ćwiczeń</h3>
                     <p>Początkowy entuzjazm mija, a pracownikom brakuje wewnętrznego bodźca do regularnej aktywności.</p>
                 </div>
-                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="200" style="grid-column: 3 / 4;">
                      <div class="card-icon">
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Brak Skutecznych Narzędzi Motywacyjnych</h3>
                     <p>Tradycyjne metody motywowania do aktywności w pracy często są nieefektywne i trudne w monitorowaniu.</p>
                 </div>
-                <div class="problem-solution-card solution-card" data-aos="fade-up" data-aos-delay="300">
+                
+                <!-- Solution card in the bottom row, spanning all columns -->
+                <div class="problem-solution-card solution-card" data-aos="fade-up" data-aos-delay="300" style="grid-column: 1 / 4; margin-top: 10px;">
                      <div class="card-icon">
                         <i class="fas fa-rocket"></i> 
                     </div>
@@ -172,30 +175,6 @@
                     </div>
                     <p class="fixme-differentiator">Wyzwania zespołowe i indywidualne budują poczucie wspólnoty.</p>
                 </div>
-
-                <!-- Benefit 4: Engagement & Retention -->
-                <div class="benefit" data-aos="fade-up" data-aos-delay="300">
-                     <i class="fas fa-user-check benefit-icon"></i>
-                    <h3>Większe Zaangażowanie i Retencja</h3>
-                     <p><strong>FIXme pomaga:</strong> Poczucie docenienia i inwestycji w pracownika buduje lojalność.</p>
-                     <div class="benefit-data">
-                        <p>Koszt zastąpienia pracownika to <strong>kilkadziesiąt % rocznej pensji</strong>.</p>
-                        <p>Wysokie zaangażowanie = <strong>znacznie niższa rotacja</strong> (nawet o 50%).</p>
-                     </div>
-                     <p class="fixme-differentiator">Pozytywna pętla docenienia wpływa na zaangażowanie.</p>
-                </div>
-
-                 <!-- Benefit 5: Employer Branding -->
-                 <div class="benefit" data-aos="fade-up" data-aos-delay="400">
-                     <i class="fas fa-building-shield benefit-icon"></i>
-                     <h3>Silniejszy Wizerunek Pracodawcy</h3>
-                     <p><strong>FIXme pomaga:</strong> Inwestycja w nowoczesne narzędzia pokazuje firmę jako innowacyjnego i troskliwego pracodawcę.</p>
-                     <div class="benefit-data">
-                        <p><strong>>80% kandydatów</strong> uważa wizerunek pracodawcy za istotny.</p>
-                        <p>Silny employer branding <strong>obniża koszty rekrutacji</strong>.</p>
-                     </div>
-                     <p class="fixme-differentiator">Narzędzie, którym pracownicy chcą się chwalić.</p>
-                 </div>
             </div>
 
             <div class="benefits-summary" data-aos="fade-up">
