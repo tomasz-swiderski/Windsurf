@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIXme AI - Inteligentna Motywacja do Aktywności Fizycznej i Benefity dla Pracowników</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/hero-styles.css">
+    <link rel="stylesheet" href="css/problem-solution.css">
+    <link rel="stylesheet" href="css/modern-sections.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Add Bootstrap or other framework here -->
@@ -35,50 +38,52 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1>AI dla Zdrowia: Motywuj Pracowników do Aktywności Fizycznej</h1>
-        <h2>FIXme AI to inteligentna platforma, która pomaga managerom HR i liderom zespołów motywować pracowników do ćwiczeń, poprawiając ich zdrowie i oferując atrakcyjne benefity.</h2>
+        <!-- Pełnoekranowe tło z maską -->
+        <img src="Public/hero zdjęcie.svg" alt="Tło sekcji hero" class="hero-background">
+        <!-- Teksty i przyciski na wierzchu -->
+        <h1>FIXMe – Rusz pracowników, zanim ruszą na L4</h1>
+        <h2>Zadbaj o zdrowie i energię swojego zespołu dzięki mikroprzerwom, które naprawdę działają. FIXMe to aplikacja, która aktywizuje pracowników w trakcie dnia pracy – bez rozbijania grafiku, bez dodatkowych kosztów. Mniej bólu, więcej skupienia, lepsze wyniki.<br><strong>Szybkie wdrożenie. Realny efekt.</strong></h2>
         <div class="cta-buttons">
             <a href="#demo" class="btn primary">Rozpocznij Program Wellness AI Teraz</a>
             <a href="#how-it-works" class="btn secondary">Zobacz Jak to Działa</a>
         </div>
-        <div class="hero-image">
-             <img src="Public/hero zdjęcie.svg" alt="Grafika przedstawiająca interfejs platformy FIXme">
-        </div>
         <div class="social-proof">
             <!-- Client logos and testimonial snippet -->
         </div>
+        <!-- Wskaźnik przewijania -->
+        <div class="scroll-indicator"></div>
     </section>
     
     <!-- Problem/Solution Section -->
     <section id="problem-solution">
         <div class="container">
-            <h2>Wyzwania HR w Motywowaniu Pracowników do Aktywności w Pracy</h2> 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 20px;">
-                <!-- Problem cards in the top row -->
-                <div class="problem-solution-card" data-aos="fade-up" style="grid-column: 1 / 2;">
+            <h2>Wyzwania HR w Motywowaniu Pracowników do Aktywności w Pracy</h2>
+            
+            <!-- Dodane zdjęcie z efektem wizualnym -->
+            <div class="problem-image-container" data-aos="zoom-in">
+                <img src="Public/Fixmecwiczacaosoba.png" alt="Osoba ćwicząca z aplikacją FIXme" class="problem-image">
+                <div class="problem-image-overlay"></div>
+            </div>
+            
+            <div class="problem-solution-grid">
+                <!-- Problem cards -->
+                <div class="problem-solution-card" data-aos="fade-up">
                     <div class="card-icon">
                         <i class="fas fa-clock"></i> 
                     </div>
                     <h3>Brak Czasu na Ruch w Ciągu Dnia</h3>
                     <p>Pracownicy czują presję obowiązków, przez co pomijają niezbędne przerwy na aktywność fizyczną.</p>
                 </div>
-                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="100" style="grid-column: 2 / 3;">
+                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="100">
                      <div class="card-icon">
                         <i class="fas fa-battery-empty"></i>
                     </div>
                     <h3>Trudność w Utrzymaniu Motywacji do Ćwiczeń</h3>
                     <p>Początkowy entuzjazm mija, a pracownikom brakuje wewnętrznego bodźca do regularnej aktywności.</p>
                 </div>
-                <div class="problem-solution-card" data-aos="fade-up" data-aos-delay="200" style="grid-column: 3 / 4;">
-                     <div class="card-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Brak Skutecznych Narzędzi Motywacyjnych</h3>
-                    <p>Tradycyjne metody motywowania do aktywności w pracy często są nieefektywne i trudne w monitorowaniu.</p>
-                </div>
                 
-                <!-- Solution card in the bottom row, spanning all columns -->
-                <div class="problem-solution-card solution-card" data-aos="fade-up" data-aos-delay="300" style="grid-column: 1 / 4; margin-top: 10px;">
+                <!-- Solution card w trzeciej kolumnie -->
+                <div class="problem-solution-card solution-card" data-aos="fade-up" data-aos-delay="200">
                      <div class="card-icon">
                         <i class="fas fa-rocket"></i> 
                     </div>
@@ -90,40 +95,50 @@
     </section>
 
     <!-- How It Works Section - Updated -->
-    <section id="how-it-works">
+    <section id="how-it-works" class="modern-section gradient-section">
         <div class="container">
-            <h2>Jak Łatwo Wdrożyć Aktywne Przerwy z FIXme?</h2> <!-- New Title -->
-            <div class="how-it-works-grid"> <!-- New Grid Container -->
-
+            <h2>Jak Łatwo Wdrożyć Aktywne Przerwy z FIXme?</h2>
+            
+            <!-- Intro text -->
+            <p class="section-intro text-center" style="max-width: 800px; margin: 40px auto 30px; font-size: 1.2rem; color: #555;">
+                Wdrożenie FIXme w Twojej organizacji to prosty proces, który przynosi natychmiastowe korzyści. Poznaj trzy kluczowe kroki, które zmienią podejście Twojego zespołu do aktywności w pracy.
+            </p>
+            
+            <div class="modern-grid">
                 <!-- Step 1: Setup -->
-                <div class="how-it-works-item text-item" data-aos="fade-right">
+                <div class="modern-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
                     <h3>Błyskawiczna Integracja</h3>
                     <p>Zsynchronizuj FIXme z kalendarzem zespołu w kilka minut. Automatyczne przypomnienia o mikroprzerwach inteligentnie dopasują się do harmonogramu pracy.</p>
-                    <!-- Add key benefits/icons here if needed -->
-                </div>
-                <div class="how-it-works-item visual-item visual-item-1" data-aos="fade-left">
-                    <!-- Replace with actual image path -->
-                    <img src="Public/integracja z kalendarzem.jpg" alt="Integracja FIXme z kalendarzem">
+                    <div class="image-container" style="margin-top: 20px; border-radius: 10px; overflow: hidden;">
+                        <img src="Public/integracja z kalendarzem.jpg" alt="Integracja FIXme z kalendarzem" style="width: 100%; height: 180px; object-fit: cover;">
+                    </div>
                 </div>
 
                 <!-- Step 2: Personalization -->
-                <div class="how-it-works-item visual-item visual-item-2" data-aos="fade-right">
-                    <!-- Replace with actual image path -->
-                    <img src="Public/spersonalizowane mikro przerwy.png" alt="Personalizowane ćwiczenia w FIXme">
-                </div>
-                <div class="how-it-works-item text-item" data-aos="fade-left">
+                <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
                     <h3>Spersonalizowane Mikroprzerwy</h3>
                     <p>Dostarcz pracownikom dopasowane plany krótkich ćwiczeń, rozciągania, automasażu czy jogi oczu – idealne na regenerację w ciągu dnia pracy.</p>
+                    <div class="image-container" style="margin-top: 20px; border-radius: 10px; overflow: hidden;">
+                        <img src="Public/spersonalizowane mikro przerwy.png" alt="Personalizowane ćwiczenia w FIXme" style="width: 100%; height: 180px; object-fit: cover;">
+                    </div>
                 </div>
 
                 <!-- Step 3: Motivation -->
-                <div class="how-it-works-item text-item" data-aos="fade-right">
+                <div class="modern-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
                     <h3>Motywacja przez Grywalizację</h3>
-                    <p>Punkty za aktywność, odznaki za regularność i przyjazne rankingi skutecznie zachęcają do budowania zdrowych nawyków w angażujący sposób.</p>
-                </div>
-                <div class="how-it-works-item visual-item visual-item-3" data-aos="fade-left">
-                    <!-- Replace with actual image path -->
-                    <img src="Public/grywalizacja.jpg" alt="Grywalizacja i odznaki w FIXme"> 
+                    <p>Pracownicy zbierają punkty za aktywność, odznaki za regularność i przyjazne rankingi skutecznie zachęcają do budowania zdrowych nawyków w angażujący sposób.</p>
+                    <div class="image-container" style="margin-top: 20px; border-radius: 10px; overflow: hidden;">
+                        <img src="Public/grywalizacja.jpg" alt="Grywalizacja i odznaki w FIXme" style="width: 100%; height: 180px; object-fit: cover;">
+                    </div>
                 </div>
 
             </div>
@@ -133,8 +148,8 @@
 
     <!-- Najczęstsze Dolegliwości Bólowe i Jak FIXme Pomaga -->
     <section id="pain-points-solution" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9f2ff 100%); padding: 80px 0; position: relative; overflow: hidden;">
-        <!-- Background decorative elements -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOFYwYzkuOTQgMCAxOCA4LjA2IDE4IDE4aDIwYzAgOS45NC04LjA2IDE4LTE4IDE4djIwYy05Ljk0IDAtMTgtOC4wNi0xOC0xOEgwYzAtOS45NCA4LjA2LTE4IDE4LTE4VjBjOS45NCAwIDE4IDguMDYgMTggMThoMjBjMC05Ljk0LTguMDYtMTgtMTgtMTh2LTIwYy05Ljk0IDAtMTggOC4wNi0xOCAxOEgwYzAgOS45NCA4LjA2IDE4IDE4IDE4djIwYzkuOTQgMCAxOC04LjA2IDE4LTE4aDIwYzAgOS45NC04LjA2IDE4LTE4IDE4djIwYy05Ljk0IDAtMTgtOC4wNi0xOC0xOEgwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIuMiIvPjwvZz48L3N2Zz4='); z-index: 0;"></div>
+        <!-- Particles.js container -->
+        <div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
         
         <div class="container" style="position: relative; z-index: 1;">
             <div style="text-align: center; margin-bottom: 50px;">
@@ -145,49 +160,38 @@
                 </p>
             </div>
             
-            <div class="pain-points-parallax">
-                <div class="pain-point-parallax-item">
-                    <div class="parallax-image">
-                        <img src="Public/Kark szyja polityca.svg" alt="Ból karku i szyi" class="pain-point-image">
-                    </div>
-                    <div class="parallax-text">
-                        <h3>Ból Karku i Ramion</h3>
-                        <p class="pain-desc">Napięcie od pochylania się nad ekranem i długotrwałego siedzenia.</p>
-                        <h4>Jak FIXme pomaga?</h4>
-                        <p class="solution-desc">Krótkie sekwencje rozciągające i wzmacniające górne partie ciała, automatyczne przypomnienia o przerwach.</p>
-                    </div>
+            <div class="pain-points-grid" data-aos="fade-up">
+                <!-- Card 1: Ból Karku i Ramion -->
+                <div class="pain-card" data-aos="fade-up">
+                    <img src="Public/Karkszyjapolityca.svg" alt="Ból karku i szyi">
+                    <h3>Ból Karku i Ramion</h3>
+                    <p>Napięcie od pochylania się nad ekranem i długotrwałego siedzenia.</p>
+                    <h4>Jak FIXme pomaga?</h4>
+                    <p>Krótkie sekwencje rozciągające i wzmacniające górne partie ciała, automatyczne przypomnienia o przerwach.</p>
                 </div>
-                <div class="pain-point-parallax-item">
-                    <div class="parallax-image">
-                        <img src="Public/Lędźwiowy komfort.svg" alt="Ból dolnych pleców" class="pain-point-image">
-                    </div>
-                    <div class="parallax-text">
-                        <h3>Ból Dolnych Pleców</h3>
-                        <p class="pain-desc">Przeciążenie i osłabienie mięśni lędźwi od długotrwałego siedzenia.</p>
-                        <h4>Jak FIXme pomaga?</h4>
-                        <p class="solution-desc">Delikatne rotacje, ćwiczenia na krzesło, wskazówki dotyczące prawidłowej postawy siedzącej.</p>
-                    </div>
+                <!-- Card 2: Ból Dolnych Pleców -->
+                <div class="pain-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Public/Ledzwiowykomfort.svg" alt="Ból dolnych pleców">
+                    <h3>Ból Dolnych Pleców</h3>
+                    <p>Przeciążenie i osłabienie mięśni lędźwi od długotrwałego siedzenia.</p>
+                    <h4>Jak FIXme pomaga?</h4>
+                    <p>Delikatne rotacje, ćwiczenia na krzesło, wskazówki dotyczące prawidłowej postawy siedzącej.</p>
                 </div>
-                <div class="pain-point-parallax-item">
-                    <div class="parallax-image">
-                        <img src="Public/Mobilne nadgarstki.svg" alt="Ból nadgarstków i dłoni" class="pain-point-image">
-                    </div>
-                    <div class="parallax-text">
-                        <h3>Ból Nadgarstków i Dłoni</h3>
-                        <p class="pain-desc">Napięcie i dyskomfort od powtarzalnych ruchów przy komputerze.</p>
-                        <h4>Jak FIXme pomaga?</h4>
-                        <p class="solution-desc">Ćwiczenia na rozluźnienie i wzmocnienie nadgarstków, przypomnienia o zmianie pozycji dłoni.</p>
-                    </div>
+                <!-- Card 3: Ból Nadgarstków i Dłoni -->
+                <div class="pain-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Public/Mobilnenadgarstki.svg" alt="Ból nadgarstków i dłoni">
+                    <h3>Ból Nadgarstków i Dłoni</h3>
+                    <p>Napięcie i dyskomfort od powtarzalnych ruchów przy komputerze.</p>
+                    <h4>Jak FIXme pomaga?</h4>
+                    <p>Ćwiczenia na rozluźnienie i wzmocnienie nadgarstków, przypomnienia o zmianie pozycji dłoni.</p>
                 </div>
-                <div class="pain-point-parallax-item">
-                    <div class="parallax-image">
-                    <div class="pain-point-image-container">
-                        <img src="Public/ramiona nadgarstki.svg" alt="Ogólne zesztywnienie ciała" class="pain-point-image">
-                    </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #0a2463;">Ogólne Zesztywnienie Ciała</h3>
-                    <p class="pain-desc" style="color: #666; margin-bottom: 15px;">Brak ruchu i długie godziny w tej samej pozycji prowadzące do sztywności stawów.</p>
-                    <h4 class="solution-title" style="font-size: 1.1rem; color: #1e56a0; margin: 15px 0 10px;">Jak FIXme pomaga?</h4>
-                    <p class="solution-desc" style="color: #444;">Sugestie krótkich spacerów, dynamiczne rozciąganie całego ciała, mikro-treningi przy biurku.</p>
+                <!-- Card 4: Ogólne Zesztywnienie Ciała (wycentrowana) -->
+                <div class="pain-card center-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="Public/ramionanadgarstki.svg" alt="Ogólne zesztywnienie ciała">
+                    <h3>Ogólne Zesztywnienie Ciała</h3>
+                    <p>Brak ruchu i długie godziny w tej samej pozycji prowadzące do sztywności stawów.</p>
+                    <h4>Jak FIXme pomaga?</h4>
+                    <p>Sugestie krótkich spacerów, dynamiczne rozciąganie całego ciała, mikro-treningi przy biurku.</p>
                 </div>
             </div>
             
@@ -196,7 +200,7 @@
             </p>
             
             <div class="pain-points-cta" style="text-align: center; margin-top: 40px;">
-                <a href="#lead-magnet" class="btn primary" style="background: linear-gradient(90deg, #0a2463, #4d96ff); color: white; padding: 15px 30px; border-radius: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: none; box-shadow: 0 4px 15px rgba(77, 150, 255, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">Wypróbuj FIXme Za Darmo</a>
+                <a href="#lead-magnet" class="btn primary" style="background: linear-gradient(90deg, #0a2463, #4d96ff); color: white; padding: 15px 30px; border-radius: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: none; box-shadow: 0 4px 15px rgba(77, 150, 255, 0.3); transition: transform 0.3s ease;">Wypróbuj FIXme Za Darmo</a>
             </div>
         </div>
     </section>
@@ -686,5 +690,8 @@
 
     <script src="js/aos.js"></script>
     <script src="js/scripts.js" defer></script>
+    <!-- Particles.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
 </body>
 </html>
