@@ -1,0 +1,543 @@
+/* Style dla interaktywnej sekcji kalendarza */
+
+#calendar-integration {
+  padding-bottom: 150px; /* Jeszcze większa przestrzeń na dole sekcji */
+  position: relative;
+  overflow: hidden; /* Zmiana z powrotem na hidden */
+  background-color: transparent;
+  margin-bottom: 80px; /* Zwiększony margines na dole */
+  border-bottom: none; /* Usunięcie dolnej krawędzi */
+}
+
+/* Efekt parallax z tłem */
+#calendar-integration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../Public/Cwiczenia.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Dodatkowa warstwa gradientu dla lepszego kontrastu */
+#calendar-integration::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(233, 242, 255, 0.9) 100%);
+  z-index: -1;
+}
+
+.calendar-demo-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  align-items: center; /* Wycentrowanie w pionie */
+  justify-content: center; /* Wycentrowanie w poziomie */
+  height: auto;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Nowy design wizualizacji kalendarza */
+.calendar-visualization.new-design {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  background: linear-gradient(to right, #f8f9fa, #e9f2ff);
+  padding: 18px 24px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Wskaźnik dzisiejszej daty */
+.today-indicator {
+  background: #4d96ff;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 5px 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to right, #4d96ff, #6ba5ff);
+  box-shadow: 0 2px 4px rgba(77, 150, 255, 0.2);
+  position: relative;
+  z-index: 4;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.calendar-nav i {
+  color: #4d96ff;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  background: rgba(77, 150, 255, 0.1);
+}
+
+.calendar-nav i:hover {
+  background: rgba(77, 150, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.calendar-nav h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0a2463;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.calendar-view-toggle {
+  display: flex;
+  background: #e9ecef;
+  border-radius: 20px;
+  padding: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-view-toggle span {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #495057;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.calendar-view-toggle span:hover:not(.active) {
+  background: rgba(77, 150, 255, 0.1);
+  color: #4d96ff;
+}
+
+.calendar-view-toggle span.active {
+  background: #4d96ff;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(77, 150, 255, 0.3);
+}
+
+/* Widok dnia */
+.calendar-day-view {
+  display: flex;
+  height: calc(100% - 95px); /* Uwzględnienie wysokości today-indicator */
+  overflow: visible;
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff, #f8faff);
+  border-radius: 0 0 16px 16px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.time-column {
+  width: 70px;
+  border-right: 1px solid #e9ecef;
+  background: rgba(248, 249, 250, 0.7);
+  border-radius: 0 0 0 16px;
+}
+
+.time-slot {
+  height: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  font-size: 0.85rem;
+  color: #6c757d;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.time-slot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 5px;
+  height: 1px;
+  background: #e9ecef;
+}
+
+.events-column {
+  flex: 1;
+  position: relative;
+  height: 540px; /* Dopasowana wysokość */
+  overflow: visible;
+  padding-right: 10px;
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 59px, #f0f3f9 59px, #f0f3f9 60px);
+  border-radius: 0 0 16px 0;
+}
+
+/* Wydarzenia kalendarza */
+.calendar-event {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+  z-index: 5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.calendar-event.meeting {
+  background: linear-gradient(to right, #e3f2fd, #e8f1ff);
+  border-left: 4px solid #1976d2;
+}
+
+.calendar-event.meeting:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.15);
+  background: linear-gradient(to right, #e3f2fd, #d6e8ff);
+}
+
+.calendar-event.lunch {
+  background: linear-gradient(to right, #e8f5e9, #e5f6e9);
+  border-left: 4px solid #43a047;
+}
+
+.calendar-event.lunch:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 160, 71, 0.15);
+  background: linear-gradient(to right, #e8f5e9, #d5ecd8);
+}
+
+.calendar-event.fixme-break {
+  background: linear-gradient(to right, #fff3e0, #fff8e8);
+  border-left: 4px solid #ff9800;
+  transition: all 0.3s ease;
+}
+
+.calendar-event.fixme-break:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+  background: linear-gradient(to right, #fff3e0, #ffe8c4);
+}
+
+.calendar-event.fixme-break.active {
+  background: linear-gradient(to right, #ffecb3, #fff0c4);
+  border-left: 4px solid #ffa000;
+  animation: pulse-border 2s infinite;
+  box-shadow: 0 0 15px rgba(255, 160, 0, 0.2);
+}
+
+@keyframes pulse-border {
+  0% {
+    border-left-color: #ffa000;
+    box-shadow: 0 0 15px rgba(255, 160, 0, 0.2);
+  }
+  50% {
+    border-left-color: #ff6f00;
+    box-shadow: 0 0 20px rgba(255, 111, 0, 0.3);
+  }
+  100% {
+    border-left-color: #ffa000;
+    box-shadow: 0 0 15px rgba(255, 160, 0, 0.2);
+  }
+}
+
+.event-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.event-content h4 {
+  margin: 0 0 3px 0;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.event-content p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.event-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #212529;
+}
+
+.event-content p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.fixme-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 152, 0, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff9800;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(255, 152, 0, 0.2);
+}
+
+.calendar-event:hover .fixme-icon {
+  transform: rotate(15deg) scale(1.1);
+  background: rgba(255, 152, 0, 0.25);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #f44336;
+  color: white;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  border: 2px solid white;
+}
+
+.notification-badge.upcoming {
+  background: #4caf50;
+}
+
+.notification-badge.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Korzyści z integracji */
+.integration-benefits {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.integration-benefits .modern-card {
+  height: 500px; /* Dopasowana wysokość do kalendarza */
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.benefits-list li i {
+  color: #4d96ff;
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
+.benefits-list li p {
+  margin: 0;
+  color: #555;
+}
+
+.calendar-logos {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.calendar-logos h4 {
+  font-size: 1.1rem;
+  color: #0a2463;
+  margin-bottom: 20px;
+}
+
+.logos-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendar-logo svg {
+  transition: transform 0.3s ease;
+}
+
+.calendar-logo:hover svg {
+  transform: translateY(-5px);
+}
+
+.calendar-logo span {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.integration-note {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Przycisk CTA */
+.integration-benefits .btn.primary {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #0a2463, #4d96ff);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(77, 150, 255, 0.2);
+}
+
+.integration-benefits .btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(77, 150, 255, 0.3);
+}
+
+/* Dodatkowy separator na dole sekcji kalendarza */
+#calendar-integration::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Wysokość separatora */
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  z-index: 2;
+}
+
+/* Dodatkowy padding dla sekcji kalendarza */
+#calendar-integration {
+  padding-bottom: 100px;
+  padding-top: 60px;
+  margin-bottom: 60px;
+  min-height: 800px;
+}
+
+/* Styl dla kontenera kalendarza */
+.calendar-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Dodatkowy margines dla następnej sekcji */
+#testimonials {
+  margin-top: 80px;
+  position: relative;
+  z-index: 0;
+  padding-top: 40px;
+}
+
+/* Responsywność */
+@media (max-width: 992px) {
+  .calendar-demo-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .calendar-visualization {
+    height: 500px;
+  }
+  
+  .integration-benefits .modern-card {
+    height: auto;
+  }
+  
+  .calendar-logos {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .calendar-visualization {
+    height: 450px;
+  }
+}

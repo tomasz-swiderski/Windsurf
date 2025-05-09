@@ -1,0 +1,13 @@
+/* Dodatkowe style dla sekcji testimonials, aby zapewnić odpowiedni odstęp */
+#testimonials {
+  padding-top: 150px;
+  position: relative;
+  z-index: 0;
+}
+
+/* Media queries dla responsywności */
+@media (max-width: 768px) {
+  #testimonials {
+    padding-top: 120px;
+  }
+}
