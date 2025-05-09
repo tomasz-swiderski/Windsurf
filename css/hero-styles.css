@@ -1,7 +1,7 @@
 /* Hero Section Styles */
 #hero {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 70px); /* Uwzględniamy wysokość menu */
     min-height: 600px;
     width: 100%;
     display: flex;
@@ -13,6 +13,7 @@
     overflow: hidden;
     color: white;
     position: relative;
+    margin-top: 0; /* Usuwamy margines górny, ponieważ mamy padding-top na body */
 }
 
 #hero::before {
