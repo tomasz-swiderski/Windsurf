@@ -480,9 +480,27 @@
 
         .pain-solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .pain-solutions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pain-solutions-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                gap: 30px;
+            }
         }
 
         .pain-solution-card {
@@ -1774,6 +1792,222 @@
                 flex-direction: column;
             }
         }
+
+        /* ========================================
+           IMPLEMENTATION JOURNEY SECTION
+        ======================================== */
+        .implementation-journey-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .implementation-journey-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .implementation-journey .journey-badge {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #1565c0;
+        }
+
+        .personalization-journey .journey-badge {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            color: #7b1fa2;
+        }
+
+        .gamification-journey .journey-badge {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            color: #ef6c00;
+        }
+
+        .implementation-icon {
+            background: rgba(21, 101, 192, 0.9);
+        }
+
+        .personalization-icon {
+            background: rgba(123, 31, 162, 0.9);
+        }
+
+        .gamification-icon {
+            background: rgba(239, 108, 0, 0.9);
+        }
+
+        .implementation-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .implementation-features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .implementation-features-list li i {
+            margin-top: 2px;
+            font-size: 1rem;
+            min-width: 16px;
+        }
+
+        .implementation-features-list strong {
+            color: var(--primary-color);
+        }
+
+        /* ========================================
+            IMPLEMENTATION SUMMARY
+         ======================================== */
+        .implementation-summary {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 0;
+            margin: 80px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(10, 36, 99, 0.2);
+        }
+
+        .summary-background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .summary-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.8), rgba(77, 150, 255, 0.7));
+            z-index: 2;
+        }
+
+        .summary-container {
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .summary-icon {
+            background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple));
+            backdrop-filter: blur(10px);
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: iconFloat 3s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(77, 150, 255, 0.4);
+        }
+
+        .summary-icon i {
+            font-size: 2.5rem;
+            color: var(--white);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .summary-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-content h4 {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .stat-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--accent-color);
+            border-radius: 15px;
+            padding: 15px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(77, 150, 255, 0.3);
+        }
+
+        .stat-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(77, 150, 255, 0.5);
+            border-color: var(--energy-orange);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .summary-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .summary-stats {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .stat-badge {
+                min-width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2048,52 +2282,135 @@
     <section class="section-modern section-padding" id="how-it-works" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9f2ff 100%);">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title text-gradient">Jak Łatwo Wdrożyć Aktywne Przerwy z FIXme?</h2>
+                <h2 class="section-title text-gradient">Jak Łatwo Wdrożyć FIXme w Twojej Firmie?</h2>
                 <div class="divider"></div>
                 <p class="section-subtitle">
-                    Wdrożenie FIXme w Twojej organizacji to prosty proces, który przynosi natychmiastowe korzyści. Poznaj trzy kluczowe kroki, które zmienią podejście Twojego zespołu do aktywności w pracy.
+                    Proste wdrożenie, zaawansowane funkcje i natychmiastowe korzyści. Poznaj trzy filary sukcesu FIXme w Twojej organizacji.
                 </p>
             </div>
             
-            <div class="implementation-steps">
-                <div class="implementation-card" data-aos="fade-up">
-                    <div class="implementation-image">
-                        <img src="Public/integracja z kalendarzem.jpg" alt="Integracja FIXme z kalendarzem">
-                    </div>
-                    <div class="implementation-content">
-                        <div class="card-icon">
-                            <i class="fas fa-calendar-check"></i>
+            <!-- Implementation Journey Cards -->
+            <div class="implementation-journey-container">
+                <!-- Easy Implementation Card -->
+                <div class="journey-card implementation-journey" data-aos="fade-up">
+                    <div class="journey-image">
+                        <img src="Public/integracja z kalendarzem.jpg" alt="Łatwe wdrożenie FIXme" class="responsive-image">
+                        <div class="image-overlay">
+                            <div class="overlay-icon implementation-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
                         </div>
-                        <h3>Błyskawiczna Integracja</h3>
-                        <p>Zsynchronizuj FIXme z kalendarzem zespołu w kilka minut. Automatyczne przypomnienia o mikroprzerwach inteligentnie dopasują się do harmonogramu pracy.</p>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-badge implementation-badge">
+                            <i class="fas fa-cogs"></i>
+                            WDROŻENIE
+                        </div>
+                        <h3>Błyskawiczne Wdrożenie i Zarządzanie</h3>
+                        <p>Kompletne rozwiązanie gotowe do użycia w kilka minut:</p>
+                        <ul class="implementation-features-list">
+                            <li><i class="fas fa-bolt text-warning"></i> <strong>Setup w 5 minut</strong></li>
+                            <li><i class="fas fa-users-cog text-primary"></i> <strong>Zarządzanie użytkownikami</strong></li>
+                            <li><i class="fas fa-chart-bar text-success"></i> <strong>Dashboard analytics</strong></li>
+                            <li><i class="fas fa-calendar-alt text-info"></i> <strong>Integracja kalendarzowa</strong></li>
+                            <li><i class="fas fa-shield-alt text-danger"></i> <strong>Bezpieczeństwo</strong></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="implementation-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="implementation-image">
-                        <img src="Public/spersonalizowane mikro przerwy.png" alt="Personalizowane ćwiczenia w FIXme">
-                    </div>
-                    <div class="implementation-content">
-                        <div class="card-icon">
-                            <i class="fas fa-user-cog"></i>
+                <!-- Personalization Card -->
+                <div class="journey-card personalization-journey" data-aos="fade-up" data-aos-delay="100">
+                    <div class="journey-image">
+                        <img src="Public/spersonalizowane mikro przerwy.png" alt="Personalizacja ćwiczeń" class="responsive-image">
+                        <div class="image-overlay">
+                            <div class="overlay-icon personalization-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
                         </div>
-                        <h3>Spersonalizowane Mikroprzerwy</h3>
-                        <p>Dostarcz pracownikom dopasowane plany krótkich ćwiczeń, rozciągania, automasażu czy jogi oczu – idealne na regenerację w ciągu dnia pracy.</p>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-badge personalization-badge">
+                            <i class="fas fa-heartbeat"></i>
+                            PERSONALIZACJA
+                        </div>
+                        <h3>Indywidualne Podejście do Każdego Pracownika</h3>
+                        <p>Pracownik w centrum uwagi - każdy ma inne potrzeby:</p>
+                        <ul class="implementation-features-list">
+                            <li><i class="fas fa-crosshairs text-danger"></i> <strong>Wybór partii ciała</strong></li>
+                            <li><i class="fas fa-thermometer-half text-warning"></i> <strong>Obszary bólu</strong></li>
+                            <li><i class="fas fa-brain text-primary"></i> <strong>AI dopasowanie</strong></li>
+                            <li><i class="fas fa-battery-full text-success"></i> <strong>Redukcja zmęczenia</strong></li>
+                            <li><i class="fas fa-chart-line text-info"></i> <strong>Wzrost efektywności</strong></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="implementation-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="implementation-image">
-                        <img src="Public/grywalizacja.jpg" alt="Grywalizacja i odznaki w FIXme">
-                    </div>
-                    <div class="implementation-content">
-                        <div class="card-icon">
-                            <i class="fas fa-trophy"></i>
+                <!-- Gamification Card -->
+                <div class="journey-card gamification-journey" data-aos="fade-up" data-aos-delay="200">
+                    <div class="journey-image">
+                        <img src="Public/grywalizacja.jpg" alt="Grywalizacja i motywacja" class="responsive-image">
+                        <div class="image-overlay">
+                            <div class="overlay-icon gamification-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
                         </div>
-                        <h3>Motywacja przez Grywalizację</h3>
-                        <p>Pracownicy zbierają punkty za aktywność, odznaki za regularność i przyjazne rankingi skutecznie zachęcają do budowania zdrowych nawyków w angażujący sposób.</p>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-badge gamification-badge">
+                            <i class="fas fa-gamepad"></i>
+                            MOTYWACJA
+                        </div>
+                        <h3>Grywalizacja Która Rzeczywiście Motywuje</h3>
+                        <p>Więcej niż aplikacja - to system budowania zdrowych nawyków:</p>
+                        <ul class="implementation-features-list">
+                            <li><i class="fas fa-coins text-warning"></i> <strong>System punktowy</strong></li>
+                            <li><i class="fas fa-medal text-primary"></i> <strong>Odznaki i achievementy</strong></li>
+                            <li><i class="fas fa-users text-success"></i> <strong>Wyzwania zespołowe</strong></li>
+                            <li><i class="fas fa-gift text-danger"></i> <strong>System nagród</strong></li>
+                            <li><i class="fas fa-chart-area text-info"></i> <strong>Rankingi firmowe</strong></li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+
+            <!-- Implementation Summary -->
+            <div class="implementation-summary" data-aos="fade-up" data-aos-delay="300">
+                <video class="summary-background-video" autoplay muted loop playsinline>
+                    <source src="Public/Zdjęcia na główną/Ćwicząca kobieta.mp4" type="video/mp4">
+                </video>
+                <div class="summary-overlay"></div>
+                <div class="summary-container">
+                    <div class="summary-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h4>Kompleksowe Rozwiązanie w Jednej Platformie</h4>
+                        <p>FIXme łączy prostotę wdrożenia z zaawansowanymi funkcjami personalizacji i motywacji, tworząc ekosystem zdrowia i produktywności w Twojej firmie.</p>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="stat-badge">
+                            <div class="stat-number">5 min</div>
+                            <div class="stat-label">Wdrożenie</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Personalizacja</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Motywacja</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <a href="#demo" class="btn-modern btn-primary btn-lg">
+                    <i class="fas fa-play me-2"></i>
+                    Zobacz FIXme w Akcji - Bezpłatne Demo
+                </a>
+                <p class="mt-3 text-muted">Gotowe do użycia w 5 minut • Bez zobowiązań • Pełne wsparcie</p>
             </div>
         </div>
     </section>
@@ -2146,18 +2463,7 @@
                     </div>
                 </div>
                 
-                <div class="pain-solution-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pain-solution-image">
-                        <img src="Public/ramionanadgarstki.svg" alt="Ogólne zesztywnienie ciała">
-                    </div>
-                    <div class="pain-solution-content">
-                        <h3>Ogólne Zesztywnienie Ciała</h3>
-                        <p>Brak ruchu i długie godziny w tej samej pozycji prowadzące do sztywności stawów.</p>
-                        <h4>Jak FIXme pomaga?</h4>
-                        <p>Sugestie krótkich spacerów, dynamiczne rozciąganie całego ciała, mikro-treningi przy biurku.</p>
-                    </div>
-                </div>
-            </div>
+
             
             <div class="text-center mt-5" data-aos="fade-up">
                 <p class="lead text-muted fst-italic mb-4">
@@ -2180,113 +2486,6 @@
                 <p class="section-subtitle">
                     Oparte na badaniach i doświadczeniach firm, które inwestują w zaangażowanie i dobrostan. Inwestycja w motywację i dobrostan pracowników to strategiczna decyzja przekładająca się na wyniki.
                 </p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-card" data-aos="fade-up">
-                    <div class="benefit-header">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Wyższa Produktywność Dzięki Odświeżonemu Umysłowi</h3>
-                        <p class="mb-4"><strong>FIXme pomaga:</strong> Regularne, krótkie przerwy na aktywność fizyczną zapobiegają spadkom koncentracji i pozwalają utrzymać wysoki poziom efektywności.</p>
-                        
-                        <div class="benefit-stats">
-                            <div class="stat-item">
-                                <div class="stat-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div class="stat-text">
-                                    Najefektywniejsi pracownicy pracują <span class="stat-highlight">52 minuty</span>, po czym robią <span class="stat-highlight">17 minut przerwy</span>.
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <div class="stat-text">
-                                    Krótkie, aktywne przerwy poprawiają skupienie o <span class="stat-highlight">10-15%</span>.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-3 p-3 rounded" style="background: #e9f2ff; border-left: 4px solid var(--secondary-color);">
-                            <p class="mb-0 fst-italic text-primary">Firmy promujące regularne przerwy zgłaszają mniej błędów i wyższą jakość pracy.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit-header">
-                        <div class="benefit-icon" style="background: linear-gradient(135deg, #fff0f0, #ffe0e0); color: var(--danger-color);">
-                            <i class="fas fa-heart-pulse"></i>
-                        </div>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Zdrowszy i Szczęśliwszy Zespół to Mniejsze Koszty</h3>
-                        <p class="mb-4"><strong>FIXme pomaga:</strong> Zachęcanie do regularnej aktywności fizycznej i mentalnego odpoczynku to inwestycja w zdrowie pracowników.</p>
-                        
-                        <div class="benefit-stats">
-                            <div class="stat-item">
-                                <div class="stat-icon" style="background: #fff0f0; color: var(--danger-color);">
-                                    <i class="fas fa-battery-full"></i>
-                                </div>
-                                <div class="stat-text">
-                                    Regularne przerwy na aktywność obniżają poziom stresu o <span class="stat-highlight">25%</span>.
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon" style="background: #fff0f0; color: var(--danger-color);">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <div class="stat-text">
-                                    Programy well-being mogą zmniejszyć absencję chorobową o <span class="stat-highlight">6-9%</span>.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-3 p-3 rounded" style="background: #fff0f0; border-left: 4px solid var(--danger-color);">
-                            <p class="mb-0 fst-italic" style="color: var(--danger-color);">Firmy inwestujące w dobrostan pracowników odnotowują niższe koszty opieki zdrowotnej.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit-header">
-                        <div class="benefit-icon" style="background: linear-gradient(135deg, #e6fcf5, #ccf5e6); color: var(--success-color);">
-                            <i class="fas fa-users"></i>
-                        </div>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Zainwestuj w Pracownika, Zbuduj Lojalny i Zaangażowany Zespół</h3>
-                        <p class="mb-4"><strong>FIXme pomaga:</strong> Pracownicy, którzy czują, że firma dba o ich dobrostan, są bardziej zaangażowani i lojalni.</p>
-                        
-                        <div class="benefit-stats">
-                            <div class="stat-item">
-                                <div class="stat-icon" style="background: #e6fcf5; color: var(--success-color);">
-                                    <i class="fas fa-chart-pie"></i>
-                                </div>
-                                <div class="stat-text">
-                                    Firmy z wysokim poziomem zaangażowania mają <span class="stat-highlight">o 59% niższą rotację</span>.
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon" style="background: #e6fcf5; color: var(--success-color);">
-                                    <i class="fas fa-user-check"></i>
-                                </div>
-                                <div class="stat-text">
-                                    <span class="stat-highlight">70% pracowników</span> pozostaje dłużej w firmie inwestującej w ich dobrostan.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-3 p-3 rounded" style="background: #e6fcf5; border-left: 4px solid var(--success-color);">
-                            <p class="mb-0 fst-italic" style="color: var(--success-color);">Silna kultura firmy, wspierająca zdrowe nawyki, przyciąga i utrzymuje talenty.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="benefit-summary" data-aos="fade-up">
