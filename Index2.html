@@ -193,6 +193,33 @@
             padding-top: var(--header-height);
         }
 
+        .hero-video-section {
+            background: none;
+        }
+
+        .hero-background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(10, 36, 99, 0.75) 0%, 
+                rgba(77, 150, 255, 0.65) 50%, 
+                rgba(131, 187, 255, 0.55) 100%);
+            z-index: 1;
+        }
+
         .hero-section::before {
             content: '';
             position: absolute;
@@ -203,6 +230,10 @@
             background: url('Public/hero zdjęcie.svg') center/cover no-repeat;
             opacity: 0.1;
             z-index: 1;
+        }
+
+        .hero-video-section::before {
+            display: none;
         }
 
         .hero-content {
@@ -217,6 +248,11 @@
             line-height: 1.2;
             margin-bottom: 24px;
             color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-video-section .hero-title {
+            color: var(--white);
         }
 
         .hero-subtitle {
@@ -226,11 +262,37 @@
             line-height: 1.6;
         }
 
+        .hero-video-section .hero-subtitle {
+            color: var(--white);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
         .hero-cta {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             margin-bottom: 60px;
+        }
+
+        .hero-video-section .btn-modern {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-video-section .btn-primary {
+            background: linear-gradient(135deg, var(--energy-orange), var(--energy-blue));
+            color: var(--white);
+        }
+
+        .hero-video-section .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .hero-video-section .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--white);
         }
 
         .floating-elements {
@@ -2269,6 +2331,294 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
         }
+
+        /* ========================================
+           CONTACT FORM SECTION
+        ======================================== */
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9f2ff 100%);
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--energy-orange), var(--energy-green), var(--energy-blue));
+            animation: energyFlow 3s ease-in-out infinite;
+        }
+
+        .contact-form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(77, 150, 255, 0.15);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--dark-color);
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--energy-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(77, 150, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-icon {
+            position: absolute;
+            top: 50px;
+            left: 18px;
+            color: var(--energy-blue);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group:focus-within .form-icon {
+            color: var(--energy-orange);
+            transform: scale(1.1);
+        }
+
+        .form-checkbox {
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--medium-gray);
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 4px;
+            margin-right: 12px;
+            margin-top: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + .checkmark {
+            background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple));
+            border-color: var(--energy-blue);
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .privacy-link {
+            color: var(--energy-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .privacy-link:hover {
+            color: var(--energy-orange);
+            text-decoration: underline;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--energy-orange), var(--energy-blue));
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-loading {
+            display: none;
+            margin-left: 10px;
+        }
+
+        .btn-submit.loading .btn-loading {
+            display: inline-block;
+        }
+
+        .submit-note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--medium-gray);
+            font-style: italic;
+        }
+
+        .contact-info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .contact-info-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(77, 150, 255, 0.05), rgba(131, 187, 255, 0.03));
+            border: 1px solid rgba(77, 150, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(77, 150, 255, 0.15);
+            border-color: var(--energy-blue);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--energy-orange), var(--energy-blue));
+        }
+
+        .contact-info-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .contact-info-card p {
+            font-size: 14px;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-link {
+            font-size: 16px;
+            color: var(--energy-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--energy-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 15px 12px 45px;
+            }
+            
+            .form-icon {
+                top: 47px;
+                left: 15px;
+                font-size: 16px;
+            }
+            
+            .contact-info-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2325,7 +2675,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
+    <section class="hero-section hero-video-section" id="hero">
+        <video class="hero-background-video" autoplay muted loop playsinline>
+            <source src="Public/Zdjęcia na główną/ćwicząca pani na tło.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
         <div class="floating-elements">
             <div class="floating-element"></div>
             <div class="floating-element"></div>
@@ -2336,7 +2690,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <h1 class="hero-title">
-                        <span class="text-gradient">FIXMe</span> – Rusz pracowników, zanim ruszą na L4
+                        <span class="text-white">FIXMe</span> – Rusz pracowników, zanim ruszą na L4
                     </h1>
                     <p class="hero-subtitle">
                         Zadbaj o zdrowie i energię swojego zespołu dzięki mikroprzerwom, które naprawdę działają. FIXMe to aplikacja, która aktywizuje pracowników w trakcie dnia pracy – bez rozbijania grafiku, bez dodatkowych kosztów. Mniej bólu, więcej skupienia, lepsze wyniki.
@@ -2381,8 +2735,8 @@
                         </div>
                         
                         <!-- Video description with energy styling -->
-                        <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(77, 150, 255, 0.05), rgba(131, 187, 255, 0.03)); border-radius: 12px; border-left: 4px solid var(--energy-blue);">
-                            <p style="margin: 0; color: var(--dark-color); font-weight: 500;">
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.3);">
+                            <p style="margin: 0; color: var(--white); font-weight: 500; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
                                 <i class="fas fa-play-circle me-2" style="color: var(--energy-blue);"></i>
                                 Zobacz FIXme w akcji - personalizowane ćwiczenia z awatarem
                             </p>
@@ -3235,6 +3589,161 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section class="section-modern section-padding contact-section" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title text-gradient">Skontaktuj się z Nami</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">
+                    Masz pytania? Chcesz poznać szczegóły? Napisz do nas – odpowiemy w ciągu 24 godzin
+                </p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-container" data-aos="fade-up" data-aos-delay="200">
+                        <form class="contact-form" id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName">Imię *</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                        <i class="fas fa-user form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastName">Nazwisko *</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                        <i class="fas fa-user form-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" required>
+                                        <i class="fas fa-envelope form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone">Telefon</label>
+                                        <input type="tel" id="phone" name="phone">
+                                        <i class="fas fa-phone form-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Nazwa Firmy *</label>
+                                <input type="text" id="company" name="company" required>
+                                <i class="fas fa-building form-icon"></i>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="employees">Liczba Pracowników</label>
+                                        <select id="employees" name="employees">
+                                            <option value="">Wybierz zakres</option>
+                                            <option value="1-20">1-20 pracowników</option>
+                                            <option value="21-50">21-50 pracowników</option>
+                                            <option value="51-100">51-100 pracowników</option>
+                                            <option value="101-500">101-500 pracowników</option>
+                                            <option value="500+">Powyżej 500 pracowników</option>
+                                        </select>
+                                        <i class="fas fa-users form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="interest">Interesuję się</label>
+                                        <select id="interest" name="interest">
+                                            <option value="">Wybierz opcję</option>
+                                            <option value="demo">Prezentacja produktu</option>
+                                            <option value="pricing">Szczegóły cenowe</option>
+                                            <option value="trial">Bezpłatny okres próbny</option>
+                                            <option value="integration">Integracja z systemami HR</option>
+                                            <option value="custom">Rozwiązanie dedykowane</option>
+                                        </select>
+                                        <i class="fas fa-star form-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Wiadomość *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Opisz swoje potrzeby, zadaj pytania lub podziel się wyzwaniami związanymi z wellness w Twojej firmie..." required></textarea>
+                                <i class="fas fa-comment form-icon"></i>
+                            </div>
+                            
+                            <div class="form-group form-checkbox">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <span class="checkmark"></span>
+                                    Akceptuję <a href="#" class="privacy-link">Politykę Prywatności</a> i wyrażam zgodę na przetwarzanie danych osobowych *
+                                </label>
+                            </div>
+                            
+                            <div class="form-group form-checkbox">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Chcę otrzymywać newsletter z informacjami o wellness w pracy i nowościach FIXme
+                                </label>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn-modern btn-primary btn-submit">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    Wyślij Wiadomość
+                                    <div class="btn-loading">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                    </div>
+                                </button>
+                                <p class="submit-note">Odpowiemy w ciągu 24 godzin</p>
+                            </div>
+                        </form>
+                        
+                        <!-- Contact Info Cards -->
+                        <div class="contact-info-cards">
+                            <div class="contact-info-card" data-aos="fade-up" data-aos-delay="300">
+                                <div class="contact-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h4>Wsparcie Techniczne</h4>
+                                <p>Pomoc w implementacji<br>i rozwiązywaniu problemów</p>
+                                <a href="mailto:support@fixme.pl" class="contact-link">support@fixme.pl</a>
+                            </div>
+                            
+                            <div class="contact-info-card" data-aos="fade-up" data-aos-delay="400">
+                                <div class="contact-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h4>Sprzedaż</h4>
+                                <p>Oferty dla firm<br>i rozwiązania dedykowane</p>
+                                <a href="mailto:sales@fixme.pl" class="contact-link">sales@fixme.pl</a>
+                            </div>
+                            
+                            <div class="contact-info-card" data-aos="fade-up" data-aos-delay="500">
+                                <div class="contact-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h4>Umów Demo</h4>
+                                <p>Bezpłatna prezentacja<br>dostosowana do Twoich potrzeb</p>
+                                <a href="#" class="contact-link" onclick="scheduleDemo()">Zarezerwuj termin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer-modern">
         <div class="container">
@@ -3312,19 +3821,22 @@
             }
         });
 
-        // FAQ toggle function
+        // FAQ Toggle Function
         function toggleFAQ(element) {
             const faqItem = element.parentElement;
-            const isActive = faqItem.classList.contains('active');
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
             
-            // Close all FAQ items
-            document.querySelectorAll('.faq-item.active').forEach(item => {
-                item.classList.remove('active');
-            });
+            faqItem.classList.toggle('active');
             
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                faqItem.classList.add('active');
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                answer.style.maxHeight = '0';
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
             }
         }
 
@@ -3644,6 +4156,223 @@
         });
 
         console.log('FIXme Enhanced Website with Video Loaded Successfully! 🚀✨');
+
+        // Contact Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            
+            // Form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Add loading state
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                
+                // Simulate form submission (replace with actual form handling)
+                setTimeout(() => {
+                    // Remove loading state
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showSuccessMessage();
+                    
+                    // Reset form
+                    contactForm.reset();
+                }, 2000);
+            });
+            
+            // Form validation
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('blur', validateField);
+                field.addEventListener('input', clearFieldError);
+            });
+            
+            function validateField(e) {
+                const field = e.target;
+                const value = field.value.trim();
+                
+                // Remove existing error
+                clearFieldError(e);
+                
+                if (!value) {
+                    showFieldError(field, 'To pole jest wymagane');
+                    return false;
+                }
+                
+                // Email validation
+                if (field.type === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        showFieldError(field, 'Wprowadź poprawny adres email');
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
+            function showFieldError(field, message) {
+                const formGroup = field.closest('.form-group');
+                
+                // Remove existing error
+                const existingError = formGroup.querySelector('.field-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                // Add error styling
+                field.style.borderColor = '#dc3545';
+                field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
+                
+                // Add error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'field-error';
+                errorDiv.style.cssText = 'color: #dc3545; font-size: 12px; margin-top: 5px; font-weight: 500;';
+                errorDiv.textContent = message;
+                formGroup.appendChild(errorDiv);
+            }
+            
+            function clearFieldError(e) {
+                const field = e.target;
+                const formGroup = field.closest('.form-group');
+                
+                // Remove error styling
+                field.style.borderColor = '';
+                field.style.boxShadow = '';
+                
+                // Remove error message
+                const existingError = formGroup.querySelector('.field-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+            }
+            
+            function showSuccessMessage() {
+                // Create success overlay
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10000;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                
+                const successBox = document.createElement('div');
+                successBox.style.cssText = `
+                    background: white;
+                    padding: 40px;
+                    border-radius: 20px;
+                    text-align: center;
+                    max-width: 400px;
+                    margin: 20px;
+                    transform: scale(0.8);
+                    transition: transform 0.3s ease;
+                `;
+                
+                successBox.innerHTML = `
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-check" style="font-size: 40px; color: white;"></i>
+                    </div>
+                    <h3 style="color: #333; margin-bottom: 15px;">Wiadomość Wysłana!</h3>
+                    <p style="color: #666; margin-bottom: 25px;">Dziękujemy za kontakt. Odpowiemy w ciągu 24 godzin.</p>
+                    <button onclick="this.closest('.success-overlay').remove()" style="background: linear-gradient(135deg, var(--energy-orange), var(--energy-blue)); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: 600; cursor: pointer;">
+                        Zamknij
+                    </button>
+                `;
+                
+                overlay.className = 'success-overlay';
+                overlay.appendChild(successBox);
+                document.body.appendChild(overlay);
+                
+                // Animate in
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                    successBox.style.transform = 'scale(1)';
+                }, 10);
+                
+                // Auto close after 5 seconds
+                setTimeout(() => {
+                    overlay.remove();
+                }, 5000);
+            }
+        });
+
+        // Schedule Demo Function
+        function scheduleDemo() {
+            // Create demo scheduling modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                padding: 40px;
+                border-radius: 20px;
+                text-align: center;
+                max-width: 500px;
+                margin: 20px;
+                transform: scale(0.8);
+                transition: transform 0.3s ease;
+            `;
+            
+            modalContent.innerHTML = `
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="fas fa-calendar-alt" style="font-size: 40px; color: white;"></i>
+                </div>
+                <h3 style="color: #333; margin-bottom: 15px;">Umów Demo</h3>
+                <p style="color: #666; margin-bottom: 25px;">Skontaktuj się z nami przez formularz powyżej lub zadzwoń bezpośrednio:</p>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+                    <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--energy-blue);">
+                        <i class="fas fa-phone me-2"></i>+48 123 456 789
+                    </p>
+                </div>
+                <button onclick="this.closest('.demo-modal').remove()" style="background: linear-gradient(135deg, var(--energy-orange), var(--energy-blue)); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: 600; cursor: pointer;">
+                    Zamknij
+                </button>
+            `;
+            
+            modal.className = 'demo-modal';
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Animate in
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modalContent.style.transform = 'scale(1)';
+            }, 10);
+            
+            // Close on background click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
     </script>
 </body>
 </html>
