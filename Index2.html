@@ -901,18 +901,11 @@
         /* ========================================
            CALENDAR INTEGRATION SECTION
         ======================================== */
-        .calendar-section {
-            background: linear-gradient(135deg, rgba(248, 249, 250, 0.9), rgba(233, 242, 255, 0.9)),
-                        url('Public/Cwiczenia.jpg') center/cover no-repeat;
-            background-attachment: fixed;
-            position: relative;
-        }
-
         .calendar-demo-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: flex-start;
             margin-top: 60px;
         }
 
@@ -924,9 +917,6 @@
         }
 
         .calendar-visualization {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
             overflow: hidden;
         }
 
@@ -935,7 +925,7 @@
             color: var(--white);
             padding: 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -961,6 +951,7 @@
 
         .nav-button:hover {
             background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
         }
 
         .calendar-content {
@@ -968,40 +959,53 @@
         }
 
         .calendar-event {
-            background: linear-gradient(135deg, #f0f5ff, #e0eaff);
-            border-radius: 8px;
-            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #e9f2ff);
+            border-radius: 12px;
+            padding: 20px;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 15px;
             transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
         }
 
         .calendar-event:hover {
             transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .calendar-event.fixme-event {
             background: linear-gradient(135deg, #e9f2ff, #d6e4ff);
             border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(77, 150, 255, 0.2);
+        }
+
+        .calendar-event.fixme-event:hover {
+            box-shadow: 0 10px 30px rgba(77, 150, 255, 0.3);
         }
 
         .event-icon {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: var(--secondary-color);
             color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-details {
+            flex: 1;
         }
 
         .event-details h5 {
             margin: 0 0 5px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary-color);
         }
@@ -1012,88 +1016,135 @@
             color: var(--medium-gray);
         }
 
-        .integration-benefits {
+        .time-selector {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+        }
+
+        .time-option {
             background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .time-option.active {
+            background: var(--secondary-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .time-option:hover {
+            background: var(--accent-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .integration-benefits {
             padding: 40px;
         }
 
-        .benefits-list {
-            list-style: none;
-            padding: 0;
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        .benefits-list li {
+        .workflow-step {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
-            padding: 15px;
+            gap: 20px;
+            padding: 20px;
             background: linear-gradient(135deg, #f8f9fa, #e9f2ff);
-            border-radius: 10px;
+            border-radius: 15px;
             transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
         }
 
-        .benefits-list li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .workflow-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .benefits-list li:last-child {
-            margin-bottom: 0;
+        .step-number {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(77, 150, 255, 0.3);
         }
 
-        .benefits-list i {
-            color: var(--success-color);
-            margin-right: 15px;
-            margin-top: 2px;
-            font-size: 1.2rem;
+        .step-content h5 {
+            margin: 0 0 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
-        .integration-logos {
+        .step-content p {
+            margin: 0;
+            color: var(--medium-gray);
+            line-height: 1.5;
+        }
+
+        .integration-summary {
+            margin-top: 60px;
+            padding: 40px;
+        }
+
+        .integration-logos-inline {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 40px 0;
-            padding: 30px;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            gap: 30px;
         }
 
         .integration-logo-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            padding: 20px;
+            gap: 10px;
+            padding: 15px;
             border-radius: 12px;
             transition: var(--transition);
+            background: linear-gradient(135deg, #f8f9fa, #e9f2ff);
         }
 
         .integration-logo-item:hover {
             transform: translateY(-5px);
-            background: var(--light-gray);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .integration-logo-item img,
         .integration-logo-item svg {
-            width: 60px;
-            height: 60px;
-            filter: grayscale(100%);
             transition: var(--transition);
+            filter: grayscale(50%);
         }
 
         .integration-logo-item:hover img,
         .integration-logo-item:hover svg {
             filter: grayscale(0%);
+            transform: scale(1.1);
         }
 
         .integration-logo-item span {
             font-weight: 500;
             color: var(--dark-color);
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* ========================================
@@ -2131,6 +2182,93 @@
                 min-width: 100px;
             }
         }
+
+        /* ========================================
+           BENEFITS VIDEO SECTION
+        ======================================== */
+        .benefits-video-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .benefits-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.85), rgba(77, 150, 255, 0.75));
+            z-index: 2;
+        }
+
+        .benefits-video-section .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .benefits-video-section .section-header h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .benefits-video-section .section-subtitle {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .benefits-video-section .benefit-summary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefits-video-section .benefit-summary h4 span {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .benefits-video-section .benefit-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits-video-section .benefit-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefits-video-section .benefit-item-icon {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefits-video-section .benefit-item span {
+            color: var(--white);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+
+        .benefits-video-section .btn-modern {
+            background: linear-gradient(135deg, var(--energy-orange), var(--energy-green));
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefits-video-section .btn-modern:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -2601,19 +2739,23 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="section-modern section-padding" id="benefits">
+    <section class="section-modern section-padding benefits-video-section" id="benefits">
+        <video class="benefits-background-video" autoplay muted loop playsinline>
+            <source src="Public/Zdjęcia na główną/ćwicząca pani na tło.mp4" type="video/mp4">
+        </video>
+        <div class="benefits-video-overlay"></div>
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title text-gradient">Wymierne Korzyści dla Twojej Firmy i Pracowników</h2>
+                <h2 class="section-title text-white">Wymierne Korzyści dla Twojej Firmy i Pracowników</h2>
                 <div class="divider"></div>
-                <p class="section-subtitle">
+                <p class="section-subtitle text-white">
                     Oparte na badaniach i doświadczeniach firm, które inwestują w zaangażowanie i dobrostan. Inwestycja w motywację i dobrostan pracowników to strategiczna decyzja przekładająca się na wyniki.
                 </p>
             </div>
 
             <div class="benefit-summary" data-aos="fade-up">
                 <h4 class="text-center mb-4">
-                    <span class="text-gradient">Podsumowując, FIXme to:</span>
+                    <span class="text-white">Podsumowując, FIXme to:</span>
                 </h4>
                 <div class="benefits-summary-grid">
                     <div class="benefit-item">
@@ -2728,24 +2870,24 @@
     </section>
 
     <!-- Calendar Integration Section -->
-    <section class="section-modern section-padding calendar-section" id="calendar-integration">
+    <section class="section-modern section-padding" id="calendar-integration" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9f2ff 100%);">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title text-white">Bezproblemowa Integracja z Kalendarzami</h2>
+                <h2 class="section-title text-gradient">Inteligentna Integracja z Twoim Kalendarzem</h2>
                 <div class="divider"></div>
-                <p class="section-subtitle text-white">
-                    FIXme płynnie integruje się z najpopularniejszymi kalendarzami, aby dopasować aktywność do Twojego harmonogramu pracy.
+                <p class="section-subtitle">
+                    FIXme automatycznie dopasowuje się do Twojego harmonogramu, planując optymalne momenty na aktywne przerwy. Ty decydujesz o czasie trwania tuż przed rozpoczęciem ćwiczeń.
                 </p>
             </div>
             
             <div class="calendar-demo-container">
-                <div class="calendar-visualization" data-aos="fade-right">
+                <div class="calendar-visualization modern-card" data-aos="fade-right">
                     <div class="calendar-header">
                         <div class="calendar-nav">
                             <button class="nav-button">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
-                            <h3 class="mb-0">9 Maja 2025</h3>
+                            <h3 class="mb-0">Dzisiaj - 9 Maja 2025</h3>
                             <button class="nav-button">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
@@ -2764,14 +2906,18 @@
                         </div>
                         
                         <div class="calendar-event fixme-event">
-                            <div class="event-icon">
+                            <div class="event-icon" style="background: var(--energy-green); animation: pulse 2s ease-in-out infinite;">
                                 <i class="fas fa-running"></i>
                             </div>
                             <div class="event-details">
-                                <h5>Przerwa FIXme</h5>
-                                <p>10:50 - 11:00</p>
+                                <h5>🎯 Przerwa FIXme</h5>
+                                <p>10:50 - Wybierz czas: 3, 5 lub 10 min</p>
                             </div>
-                            <span class="badge bg-success">Teraz</span>
+                            <div class="time-selector">
+                                <span class="time-option active">3min</span>
+                                <span class="time-option">5min</span>
+                                <span class="time-option">10min</span>
+                            </div>
                         </div>
                         
                         <div class="calendar-event">
@@ -2795,84 +2941,99 @@
                         </div>
                         
                         <div class="calendar-event fixme-event">
-                            <div class="event-icon">
+                            <div class="event-icon" style="background: var(--energy-blue);">
                                 <i class="fas fa-dumbbell"></i>
                             </div>
                             <div class="event-details">
-                                <h5>Przerwa FIXme</h5>
-                                <p>15:50 - 16:00</p>
+                                <h5>⏰ Następna przerwa FIXme</h5>
+                                <p>15:50 - Automatycznie zaplanowana</p>
                             </div>
                             <span class="badge bg-info">Za 20 min</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="integration-benefits" data-aos="fade-left">
+                <div class="integration-benefits modern-card" data-aos="fade-left">
                     <div class="text-center mb-4">
-                        <div class="feature-icon mx-auto mb-3">
+                        <div class="feature-icon mx-auto mb-3" style="background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple)); color: white; animation: float 3s ease-in-out infinite;">
                             <i class="fas fa-calendar-check"></i>
                         </div>
-                        <h3 class="text-primary">Dlaczego integracja z kalendarzem jest ważna?</h3>
+                        <h3 class="text-gradient">Jak to działa w praktyce?</h3>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <p>Automatyczne planowanie aktywnych przerw pomiędzy spotkaniami</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <p>Inteligentne powiadomienia o przerwach w optymalnym czasie</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <p>Blokowanie czasu na regenerację w intensywnych dniach pracy</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <p>Synchronizacja z całym zespołem dla wspólnych aktywnych przerw</p>
-                        </li>
-                    </ul>
-                    
-                    <div class="text-center mt-4">
-                        <a href="#demo" class="btn-modern btn-primary">
-                            <i class="fas fa-play me-2"></i>
-                            Sprawdź Jak To Działa
-                        </a>
+                    <div class="workflow-steps">
+                        <div class="workflow-step" data-aos="fade-up" data-aos-delay="100">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Automatyczne planowanie</h5>
+                                <p>FIXme analizuje Twój kalendarz i znajduje optymalne momenty na przerwy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step" data-aos="fade-up" data-aos-delay="200">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Inteligentne powiadomienie</h5>
+                                <p>Otrzymujesz delikatne przypomnienie w idealnym momencie</p>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step" data-aos="fade-up" data-aos-delay="300">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Wybór czasu trwania</h5>
+                                <p>Tuż przed rozpoczęciem wybierasz: <strong>3, 5 lub 10 minut</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step" data-aos="fade-up" data-aos-delay="400">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>Aktywna przerwa</h5>
+                                <p>Wykonujesz dopasowane ćwiczenia i wracasz do pracy z nową energią</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="integration-logos" data-aos="fade-up">
-                <div class="text-center w-100 mb-4">
-                    <h4 class="text-primary">Współpracuje z:</h4>
-                </div>
-                
-                <div class="integration-logo-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="60px" height="60px">
-                        <rect width="22" height="22" x="13" y="13" fill="#fff"/>
-                        <polygon fill="#1e88e5" points="25.68,20.92 26.688,22.36 28.272,21.208 28.272,29.56 30,29.56 30,18.616 28.56,18.616"/>
-                        <path fill="#1e88e5" d="M22.943,23.745c0.625-0.574,1.013-1.37,1.013-2.249c0-1.747-1.533-3.168-3.417-3.168 c-1.602,0-2.972,1.009-3.33,2.453l1.657,0.421c0.165-0.664,0.868-1.146,1.673-1.146c0.942,0,1.709,0.646,1.709,1.44 c0,0.794-0.767,1.44-1.709,1.44h-0.997v1.728h0.997c1.081,0,1.993,0.751,1.993,1.64c0,0.904-0.866,1.64-1.931,1.64 c-0.962,0-1.784-0.61-1.914-1.418L17,26.802c0.262,1.636,1.81,2.87,3.6,2.87c2.007,0,3.64-1.511,3.64-3.368 C24.24,25.281,23.736,24.363,22.943,23.745z"/>
-                        <polygon fill="#fbc02d" points="34,42 14,42 13,38 14,34 34,34 35,38"/>
-                        <polygon fill="#4caf50" points="38,35 42,34 42,14 38,13 34,14 34,34"/>
-                        <path fill="#1e88e5" d="M34,14l1-4l-1-4H9C7.343,6,6,7.343,6,9v25l4,1l4-1V14H34z"/>
-                        <polygon fill="#e53935" points="34,34 34,42 42,34"/>
-                        <path fill="#1565c0" d="M39,6h-5v8h8V9C42,7.343,40.657,6,39,6z"/>
-                        <path fill="#1565c0" d="M9,42h5v-8H6v5C6,40.657,7.343,42,9,42z"/>
-                    </svg>
-                    <span>Google Calendar</span>
-                </div>
-                
-                <div class="integration-logo-item">
-                    <img src="Public/Outlook.png" alt="Microsoft Outlook" style="width: 60px; height: 60px; object-fit: contain;">
-                    <span>Microsoft Outlook</span>
+            <div class="integration-summary modern-card" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4 class="text-gradient mb-3">Współpracuje z Twoimi ulubionymi kalendarzami</h4>
+                        <p class="mb-0">Integracja zajmuje mniej niż 2 minuty i nie wymaga wsparcia IT. Synchronizacja działa w czasie rzeczywistym.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="integration-logos-inline">
+                            <div class="integration-logo-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="50px" height="50px">
+                                    <rect width="22" height="22" x="13" y="13" fill="#fff"/>
+                                    <polygon fill="#1e88e5" points="25.68,20.92 26.688,22.36 28.272,21.208 28.272,29.56 30,29.56 30,18.616 28.56,18.616"/>
+                                    <path fill="#1e88e5" d="M22.943,23.745c0.625-0.574,1.013-1.37,1.013-2.249c0-1.747-1.533-3.168-3.417-3.168 c-1.602,0-2.972,1.009-3.33,2.453l1.657,0.421c0.165-0.664,0.868-1.146,1.673-1.146c0.942,0,1.709,0.646,1.709,1.44 c0,0.794-0.767,1.44-1.709,1.44h-0.997v1.728h0.997c1.081,0,1.993,0.751,1.993,1.64c0,0.904-0.866,1.64-1.931,1.64 c-0.962,0-1.784-0.61-1.914-1.418L17,26.802c0.262,1.636,1.81,2.87,3.6,2.87c2.007,0,3.64-1.511,3.64-3.368 C24.24,25.281,23.736,24.363,22.943,23.745z"/>
+                                    <polygon fill="#fbc02d" points="34,42 14,42 13,38 14,34 34,34 35,38"/>
+                                    <polygon fill="#4caf50" points="38,35 42,34 42,14 38,13 34,14 34,34"/>
+                                    <path fill="#1e88e5" d="M34,14l1-4l-1-4H9C7.343,6,6,7.343,6,9v25l4,1l4-1V14H34z"/>
+                                    <polygon fill="#e53935" points="34,34 34,42 42,34"/>
+                                    <path fill="#1565c0" d="M39,6h-5v8h8V9C42,7.343,40.657,6,39,6z"/>
+                                    <path fill="#1565c0" d="M9,42h5v-8H6v5C6,40.657,7.343,42,9,42z"/>
+                                </svg>
+                                <span>Google Calendar</span>
+                            </div>
+                            
+                            <div class="integration-logo-item">
+                                <img src="Public/Outlook.png" alt="Microsoft Outlook" style="width: 50px; height: 50px; object-fit: contain;">
+                                <span>Microsoft Outlook</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="text-center" data-aos="fade-up">
-                <p class="text-white-50 fst-italic">
-                    Integracja zajmuje mniej niż 2 minuty i nie wymaga wsparcia IT.
-                </p>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="#demo" class="btn-modern btn-primary btn-lg">
+                    <i class="fas fa-calendar-plus me-2"></i>
+                    Sprawdź Integrację w Akcji
+                </a>
             </div>
         </div>
     </section>
