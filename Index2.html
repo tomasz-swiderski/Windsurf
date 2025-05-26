@@ -742,25 +742,98 @@
             transition: var(--transition);
             text-align: center;
             padding: 50px 30px 40px;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--energy-orange), var(--energy-green), var(--energy-blue), var(--energy-purple));
+            animation: energyFlow 3s ease-in-out infinite;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .feature-card:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, var(--energy-green), #32cd32);
+            color: var(--white);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--energy-purple), #ba55d3);
+            color: var(--white);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--energy-orange), #ff8c00);
+            color: var(--white);
+            animation: rotate 3s linear infinite;
+        }
+
+        .feature-card:nth-child(4) .feature-icon {
+            background: linear-gradient(135deg, var(--energy-blue), #1e90ff);
+            color: var(--white);
+            animation: shake 2s ease-in-out infinite;
+        }
+
+        .feature-card:nth-child(5) .feature-icon {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: var(--white);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .feature-card:nth-child(6) .feature-icon {
+            background: linear-gradient(135deg, #20c997, #28a745);
+            color: var(--white);
+            animation: float 3s ease-in-out infinite;
         }
 
         .feature-icon {
             width: 100px;
             height: 100px;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, #f0f5ff, #e0eaff);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
-            color: var(--secondary-color);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .feature-card:hover .feature-icon::before {
+            animation: shine 0.8s ease-in-out;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotateY(10deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
 
         .feature-card h4 {
@@ -768,11 +841,61 @@
             font-weight: 600;
             margin-bottom: 20px;
             color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover h4 {
+            color: var(--secondary-color);
+            transform: translateY(-5px);
         }
 
         .feature-card p {
             color: var(--medium-gray);
             line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover p {
+            color: var(--dark-color);
+        }
+
+        /* Animacje dla ikon */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+            20%, 40%, 60%, 80% { transform: translateX(3px); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3); }
+            100% { box-shadow: 0 10px 30px rgba(255, 107, 53, 0.8), 0 0 30px rgba(255, 107, 53, 0.5); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shine {
+            0% { opacity: 0; transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         /* ========================================
