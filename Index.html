@@ -62,7 +62,7 @@
                         <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-cta" href="#demo">Rozpocznij za darmo</a>
+                        <a class="nav-link nav-cta" href="#demo">Sprawdź demo</a>
                     </li>
                 </ul>
             </div>
@@ -102,40 +102,52 @@
                         </a>
                     </div>
                 </div>
+                
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                    <div class="modern-card p-4 text-center video-card-style">
-                        <!-- Energy border effect -->
-                        <div class="hero-energy-border"></div>
+                    <div class="hero-quote-form">
+                        <div class="quote-form-header">
+                            <h3>Otrzymaj Bezpłatną Wycenę</h3>
+                            <p>Sprawdź koszt wdrożenia FIXme w Twojej firmie</p>
+                        </div>
                         
-                        <!-- Video with custom controls and energy effects -->
-                        <div class="relative-overflow-hidden">
-                            <video 
-                                controls 
-                                loop
-                                poster="Public/Fixmecwiczacaosoba.png"
-                                class="hero-video-style"
-                                onmouseover="this.parentElement.classList.add('video-card-style:hover')" 
-                                onmouseout="this.parentElement.classList.remove('video-card-style:hover')"
-                            >
-                                <source src="Public/Ćwiczenia_z_Avatarem_Wygenerowane.mp4" type="video/mp4">
-                                <p>Twoja przeglądarka nie obsługuje odtwarzania wideo. <a href="Public/Ćwiczenia_z_Avatarem_Wygenerowane.mp4">Pobierz film</a></p>
-                            </video>
-                            
-                            <!-- Play button overlay with energy effect -->
-                            <div class="video-overlay">
-                                <div class="overlay-icon" style="background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple)); box-shadow: 0 10px 30px rgba(77, 150, 255, 0.4); animation: pulse 2s ease-in-out infinite;">
-                                    <i class="fas fa-play" style="font-size: 2rem; color: white; margin-left: 4px;"></i>
+                        <form class="quick-quote-form" id="heroQuoteForm">
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user form-icon"></i>
+                                    <input type="text" id="heroName" name="name" placeholder="Twoje imię" required>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Video description with energy styling -->
-                        <div class="video-description-box">
-                            <p>
-                                <i class="fas fa-play-circle me-2" style="color: var(--energy-blue);"></i>
-                                Zobacz FIXme w akcji - personalizowane ćwiczenia z awatarem
+                            
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope form-icon"></i>
+                                    <input type="email" id="heroEmail" name="email" placeholder="Email służbowy" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-users form-icon"></i>
+                                    <select id="heroEmployees" name="employees" required>
+                                        <option value="">Liczba pracowników</option>
+                                        <option value="do-100">Do 100 pracowników</option>
+                                        <option value="do-250">Do 250 pracowników</option>
+                                        <option value="do-500">Do 500 pracowników</option>
+                                        <option value="powyżej-500">Powyżej 500 pracowników</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-modern btn-primary hero-form-btn">
+                                <i class="fas fa-calculator me-2"></i>
+                                Otrzymaj Wycenę
+                            </button>
+                            
+                            <p class="form-disclaimer">
+                                <i class="fas fa-shield-alt"></i>
+                                Bezpłatnie • Bez zobowiązań • Odpowiedź w 24h
                             </p>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -318,9 +330,6 @@
                 <div class="journey-step problem-step" data-aos="fade-right">
                     <div class="step-visual">
                         <img src="Public/Zdjęcia na główną/Brak czasu w ciągu dnia.png" alt="Problemy biurowe" class="step-image">
-                        <div class="step-icon problem-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
                         <div class="step-badge problem-badge">
                             <i class="fas fa-exclamation-circle"></i>
                             PROBLEM
@@ -338,7 +347,7 @@
                                 <span>Spadek koncentracji</span>
                             </div>
                             <div class="point-item">
-                                <i class="fas fa-chart-line-down text-danger"></i>
+                                <i class="fas fa-exclamation-triangle text-danger"></i>
                                 <span>Niższa efektywność</span>
                             </div>
                         </div>
@@ -1138,42 +1147,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Pricing Benefits -->
-            <div class="pricing-benefits" data-aos="fade-up" data-aos-delay="400">
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <span>14-dniowy trial bez zobowiązań</span>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <span>Bez opłat za wdrożenie</span>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-calendar-times"></i>
-                        </div>
-                        <span>Brak długoterminowych umów</span>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <span>Pełne wsparcie wdrożenia</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-                <p class="pricing-note">
-                    <strong>Wszystkie ceny netto.</strong> Rabaty dla organizacji non-profit i edukacyjnych.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -1248,43 +1221,54 @@
                 <!-- Contact Form Column -->
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-form-container">
-                        <h3 class="text-gradient mb-4">Skontaktuj się z Nami</h3>
-                        <p class="mb-4 text-muted">Masz pytania? Napisz do nas – odpowiemy w ciągu 24 godzin</p>
+                        <div class="form-header">
+                            <h3 class="text-gradient">Skontaktuj się z Nami</h3>
+                            <p class="form-subtitle">Masz pytania? Napisz do nas – odpowiemy w ciągu 24 godzin</p>
+                        </div>
                         
                         <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <label for="firstName">Imię *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                                <i class="fas fa-user form-icon"></i>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Imię <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-user form-icon"></i>
+                                        <input type="text" id="firstName" name="firstName" placeholder="Wpisz swoje imię" required>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" id="email" name="email" required>
+                            <div class="form-row">
+                                <div class="form-group half-width">
+                                    <label for="email">Email <span class="required">*</span></label>
+                                    <div class="input-wrapper">
                                         <i class="fas fa-envelope form-icon"></i>
+                                        <input type="email" id="email" name="email" placeholder="twoj@email.com" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="phone">Telefon</label>
-                                        <input type="tel" id="phone" name="phone">
+                                <div class="form-group half-width">
+                                    <label for="phone">Telefon</label>
+                                    <div class="input-wrapper">
                                         <i class="fas fa-phone form-icon"></i>
+                                        <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="company">Nazwa Firmy *</label>
-                                <input type="text" id="company" name="company" required>
-                                <i class="fas fa-building form-icon"></i>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Nazwa Firmy <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-building form-icon"></i>
+                                        <input type="text" id="company" name="company" placeholder="Nazwa Twojej firmy" required>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="employees">Liczba Pracowników</label>
+                            <div class="form-row">
+                                <div class="form-group half-width">
+                                    <label for="employees">Liczba Pracowników</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-users form-icon"></i>
                                         <select id="employees" name="employees">
                                             <option value="">Wybierz zakres</option>
                                             <option value="1-20">1-20 pracowników</option>
@@ -1293,12 +1277,12 @@
                                             <option value="101-500">101-500 pracowników</option>
                                             <option value="500+">Powyżej 500 pracowników</option>
                                         </select>
-                                        <i class="fas fa-users form-icon"></i>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="interest">Interesuję się</label>
+                                <div class="form-group half-width">
+                                    <label for="interest">Interesuję się</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-star form-icon"></i>
                                         <select id="interest" name="interest">
                                             <option value="">Wybierz opcję</option>
                                             <option value="demo">Prezentacja produktu</option>
@@ -1307,21 +1291,24 @@
                                             <option value="integration">Integracja z systemami HR</option>
                                             <option value="custom">Rozwiązanie dedykowane</option>
                                         </select>
-                                        <i class="fas fa-star form-icon"></i>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="message">Wiadomość *</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Opisz swoje potrzeby, zadaj pytania lub podziel się wyzwaniami związanymi z wellness w Twojej firmie..." required></textarea>
-                                <i class="fas fa-comment form-icon"></i>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="message">Wiadomość <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-comment form-icon textarea-icon"></i>
+                                        <textarea id="message" name="message" rows="4" placeholder="Opisz swoje potrzeby, zadaj pytania lub podziel się wyzwaniami związanymi z wellness w Twojej firmie..." required></textarea>
+                                    </div>
+                                </div>
                             </div>
                             
                             <div class="form-submit">
-                                <button type="submit" class="btn-modern btn-primary btn-submit w-100">
-                                    <i class="fas fa-paper-plane me-2"></i>
-                                    Wyślij Wiadomość
+                                <button type="submit" class="btn-modern btn-primary btn-submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Wyślij Wiadomość</span>
                                     <div class="btn-loading">
                                         <i class="fas fa-spinner fa-spin"></i>
                                     </div>
