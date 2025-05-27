@@ -2793,8 +2793,8 @@ video:hover {
 .benefits-video-section {
     position: relative; /* Establishes a positioning context */
     overflow: hidden; /* Ensures video/overlay don't spill out */
-    padding: 100px 0; /* Keep your section padding */
-    background: #333; /* Fallback background if video fails */
+    padding: 120px 0; /* Keep your section padding */
+    background: #0a193e; /* Głębszy granat jako fallback */
 }
 
 .benefits-background-video {
@@ -2805,6 +2805,7 @@ video:hover {
     height: 100%;
     object-fit: cover; /* Ensures video covers the area */
     z-index: 1; /* Behind overlay and content */
+    filter: grayscale(50%) brightness(0.6);
 }
 
 .benefits-video-overlay {
@@ -2813,7 +2814,7 @@ video:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 36, 99, 0.8); /* Adjust color and opacity as needed */
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.85) 0%, rgba(20, 60, 150, 0.75) 100%);
     z-index: 2; /* Above video, below content */
 }
 
@@ -4329,5 +4330,151 @@ video:hover {
         font-size: 0.8rem;
         flex-direction: column;
         gap: 5px;
+    }
+}
+
+/* ========================================
+   BENEFITS SECTION - ENHANCED ESTHETICS
+======================================== */
+.benefits-video-section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background: #0a193e; /* Głębszy granat jako fallback */
+}
+
+.benefits-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Behind overlay and content */
+    filter: grayscale(50%) brightness(0.6);
+}
+
+.benefits-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.85) 0%, rgba(20, 60, 150, 0.75) 100%);
+    z-index: 2; /* Above video, below content */
+}
+
+.benefits-video-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+.benefits-video-section .section-header .section-title,
+.benefits-video-section .section-header .section-subtitle {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.benefits-video-section .divider {
+    background: linear-gradient(90deg, var(--accent-color), var(--white));
+}
+
+.benefit-summary {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    padding: 50px 40px;
+    margin: 80px auto 40px;
+    max-width: 1100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefit-summary h4 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.benefits-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column; /* Ikona nad tekstem */
+    align-items: center; /* Wyśrodkowanie w poziomie */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: 18px;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.benefit-item-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--energy-blue), var(--energy-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Odstęp między ikoną a tekstem */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: var(--white);
+    font-size: 1.8rem; /* Zwiększony rozmiar ikon */
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover .benefit-item-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, var(--energy-purple), var(--energy-orange));
+}
+
+/* Różne kolory dla ikon dla większej różnorodności */
+.benefit-item:nth-child(1) .benefit-item-icon { background: linear-gradient(135deg, #17a2b8, #138496); } /* Info Blue */
+.benefit-item:nth-child(2) .benefit-item-icon { background: linear-gradient(135deg, #fd7e14, #e85a00); } /* Orange */
+.benefit-item:nth-child(3) .benefit-item-icon { background: linear-gradient(135deg, #6f42c1, #5a32a3); } /* Purple */
+.benefit-item:nth-child(4) .benefit-item-icon { background: linear-gradient(135deg, #20c997, #1baa80); } /* Teal */
+.benefit-item:nth-child(5) .benefit-item-icon { background: linear-gradient(135deg, #ffc107, #cc9a00); } /* Yellow */
+.benefit-item:nth-child(6) .benefit-item-icon { background: linear-gradient(135deg, #dc3545, #b02a37); } /* Red */
+
+.benefit-item span {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1.05rem; /* Lekko zwiększony font */
+    line-height: 1.4;
+}
+
+.benefits-video-section .btn-modern.btn-primary {
+    background: linear-gradient(135deg, var(--energy-orange), var(--energy-blue));
+    padding: 18px 40px; /* Większy przycisk */
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .benefits-summary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .benefit-item {
+        padding: 25px 15px;
+    }
+    .benefit-item-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+    .benefit-summary h4 {
+        font-size: 1.4rem;
     }
 }
