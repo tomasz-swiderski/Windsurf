@@ -206,89 +206,91 @@
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="about-visual">
                         <div class="visual-container">
-                            <!-- Main illustration -->
-                            <div class="main-illustration">
-                                <div class="illustration-card">
-                                    <div class="card-header">
-                                        <div class="card-dots">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                        <div class="card-title">FIXme App</div>
+                            <!-- Dashboard Sidebar -->
+                            <div class="dashboard-sidebar">
+                                <div class="dashboard-logo">
+                                    <img src="Public/Logo fixme.png" alt="FIXme Logo" class="sidebar-logo">
+                                </div>
+                                <div class="dashboard-menu">
+                                    <div class="menu-item active">
+                                        <i class="fas fa-home"></i>
+                                        <span>Dashboard</span>
                                     </div>
-                                    <div class="card-content">
-                                        <!-- Video Background -->
-                                        <div class="video-background-container">
-                                            <video class="exercise-video" autoplay muted loop playsinline>
-                                                <source src="Public/Zdjęcia na główną/Gosia rozciąganie szyi.mp4" type="video/mp4">
-                                            </video>
-                                            
-                                            <!-- App Interface Overlay -->
-                                            <div class="app-interface-overlay">
-                                                <div class="exercise-demo">
-                                                    <div class="avatar-container">
-                                                        <div class="avatar">
-                                                            <i class="fas fa-user"></i>
-                                                        </div>
-                                                        <div class="motion-lines">
-                                                            <div class="line line-1"></div>
-                                                            <div class="line line-2"></div>
-                                                            <div class="line line-3"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="exercise-info">
-                                                        <div class="exercise-name">Rozciąganie Karku</div>
-                                                        <div class="exercise-progress">
-                                                            <div class="progress-bar">
-                                                                <div class="progress-fill"></div>
-                                                            </div>
-                                                            <span class="progress-text">8/10 powtórzeń</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="ai-feedback">
-                                                    <div class="feedback-icon">
-                                                        <i class="fas fa-check-circle"></i>
-                                                    </div>
-                                                    <div class="feedback-text">Świetnie! Ruch wykonany poprawnie</div>
-                                                </div>
-                                            </div>
+                                    <div class="menu-item">
+                                        <i class="fas fa-dumbbell"></i>
+                                        <span>Ćwiczenia</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Statystyki</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Osiągnięcia</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quick Stats -->
+                                <div class="quick-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <div class="stat-details">
+                                            <span class="stat-value">85%</span>
+                                            <span class="stat-label">Aktywność dziś</span>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="stat-details">
+                                            <span class="stat-value">45 min</span>
+                                            <span class="stat-label">Czas ćwiczeń</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Floating elements -->
-                            <div class="floating-stats">
-                                <div class="stat-card stat-1" data-aos="fade-up" data-aos-delay="500">
-                                    <div class="stat-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="stat-info">
-                                        <div class="stat-number">3-10</div>
-                                        <div class="stat-label">minut</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="stat-card stat-2" data-aos="fade-up" data-aos-delay="600">
-                                    <div class="stat-icon">
-                                        <i class="fas fa-tshirt"></i>
-                                    </div>
-                                    <div class="stat-info">
-                                        <div class="stat-number">0</div>
-                                        <div class="stat-label">zmian ubioru</div>
+
+                            <!-- Main Content Area -->
+                            <div class="main-content-area">
+                                <div class="content-header">
+                                    <h2>Twoja Sesja Treningowa</h2>
+                                    <div class="session-controls">
+                                        <button class="btn-modern btn-sm">
+                                            <i class="fas fa-pause"></i>
+                                        </button>
+                                        <button class="btn-modern btn-sm btn-primary">
+                                            <i class="fas fa-play"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                
-                                <div class="stat-card stat-3" data-aos="fade-up" data-aos-delay="700">
-                                    <div class="stat-icon">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <div class="stat-info">
-                                        <div class="stat-number">AI</div>
-                                        <div class="stat-label">monitoring</div>
+
+                                <!-- Exercise View -->
+                                <div class="exercise-view">
+                                    <video class="exercise-video" autoplay muted loop playsinline>
+                                        <source src="Public/Zdjęcia na główną/Gosia rozciąganie szyi.mp4" type="video/mp4">
+                                    </video>
+                                    
+                                    <!-- Exercise Overlay -->
+                                    <div class="exercise-overlay">
+                                        <div class="exercise-info">
+                                            <h3>Rozciąganie Karku</h3>
+                                            <div class="exercise-progress">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 80%"></div>
+                                                </div>
+                                                <span class="progress-text">8/10 powtórzeń</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ai-feedback">
+                                            <div class="feedback-icon">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <span>Świetnie! Ruch wykonany poprawnie</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -303,132 +305,102 @@
     <section class="section-modern section-padding" id="problem-solution">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title text-gradient">Zmęczony Pracownik = Nieefektywny Pracownik</h2>
+                <h2 class="section-title text-gradient">Zmęczony Pracownik = Mniejsza Produktywność</h2>
                 <div class="divider"></div>
                 <p class="section-subtitle">
-                    Odkryj jak FIXme wykorzystuje najnowocześniejszą technologię Motion Capture, aby przekształcić Twój zespół w zdrowszą i bardziej efektywną jednostkę
+                    Zobacz jak FIXme zamienia codzienne problemy biurowe w okazje do zwiększenia energii i efektywności zespołu
                 </p>
             </div>
             
-            <!-- Visual Journey Section -->
-            <div class="visual-journey-container">
-                <!-- Problem Card -->
-                <div class="journey-card problem-journey" data-aos="fade-right">
-                    <div class="journey-image">
-                        <img src="Public/Zdjęcia na główną/Brak czasu w ciągu dnia.png" alt="Zmęczony pracownik bez czasu na aktywność" class="responsive-image">
-                        <div class="image-overlay">
-                            <div class="overlay-icon problem-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
+            <!-- Simplified Journey Section -->
+            <div class="problem-solution-journey">
+                <!-- Problem -->
+                <div class="journey-step problem-step" data-aos="fade-right">
+                    <div class="step-visual">
+                        <img src="Public/Zdjęcia na główną/Brak czasu w ciągu dnia.png" alt="Problemy biurowe" class="step-image">
+                        <div class="step-icon problem-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
                         </div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-badge problem-badge">
-                            <i class="fas fa-clock"></i>
+                        <div class="step-badge problem-badge">
+                            <i class="fas fa-exclamation-circle"></i>
                             PROBLEM
                         </div>
-                        <h3>Brak Czasu na Regenerację</h3>
-                        <p>Pracownicy są przeciążeni obowiązkami, pomijają niezbędne przerwy na aktywność fizyczną, co prowadzi do:</p>
-                        <ul class="problem-list">
-                            <li><i class="fas fa-arrow-down text-danger"></i> Spadku koncentracji</li>
-                            <li><i class="fas fa-arrow-down text-danger"></i> Wzrostu stresu</li>
-                            <li><i class="fas fa-arrow-down text-danger"></i> Problemów zdrowotnych</li>
-                            <li><i class="fas fa-arrow-down text-danger"></i> Niskiej efektywności</li>
-                        </ul>
                     </div>
-                </div>
-
-                <!-- Arrow Transition -->
-                <div class="journey-arrow" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="arrow-icon">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="arrow-text">FIXme<br>Solution</div>
-                </div>
-
-                <!-- Solution Card -->
-                <div class="journey-card solution-journey" data-aos="fade-up" data-aos-delay="100">
-                    <div class="journey-image">
-                        <img src="Public/Zdjęcia na główną/Ćwiczenia w trakcie pracy.png" alt="Motion Capture ćwiczenia w pracy" class="responsive-image">
-                        <div class="image-overlay">
-                            <div class="overlay-icon solution-icon">
-                                <i class="fas fa-robot"></i>
+                    <div class="step-content">
+                        <h3>Codzienne Wyzwania</h3>
+                        <div class="problem-points">
+                            <div class="point-item">
+                                <i class="fas fa-clock text-danger"></i>
+                                <span>Brak czasu na przerwy</span>
+                            </div>
+                            <div class="point-item">
+                                <i class="fas fa-tired text-danger"></i>
+                                <span>Spadek koncentracji</span>
+                            </div>
+                            <div class="point-item">
+                                <i class="fas fa-chart-line-down text-danger"></i>
+                                <span>Niższa efektywność</span>
                             </div>
                         </div>
                     </div>
-                    <div class="journey-content">
-                        <div class="journey-badge solution-badge">
+                </div>
+
+                <!-- Arrow -->
+                <div class="solution-arrow" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="arrow-container">
+                        <img src="Public/Logo fixme.png" alt="FIXme Logo" class="arrow-logo">
+                    </div>
+                </div>
+
+                <!-- Solution -->
+                <div class="journey-step solution-step" data-aos="fade-left" data-aos-delay="100">
+                    <div class="step-visual">
+                        <img src="Public/Zdjęcia na główną/Ćwiczenia w trakcie pracy.png" alt="Rozwiązanie FIXme" class="step-image">
+                        <div class="step-badge solution-badge">
                             <i class="fas fa-magic"></i>
                             ROZWIĄZANIE
                         </div>
-                        <h3>Technologia Motion Capture</h3>
-                        <p>Najnowocześniejsza technologia AI monitoruje i koryguje ruchy w czasie rzeczywistym:</p>
-                        <ul class="solution-list">
-                            <li><i class="fas fa-check-circle text-success"></i> Personalizowane ćwiczenia</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Monitoring poprawności</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Mikroprzerwy 3-10 min</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Bez zmiany stroju</li>
-                        </ul>
                     </div>
-                </div>
-
-                <!-- Arrow Transition -->
-                <div class="journey-arrow" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="arrow-icon">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="arrow-text">Efekt</div>
-                </div>
-
-                <!-- Result Card -->
-                <div class="journey-card result-journey" data-aos="fade-left" data-aos-delay="200">
-                    <div class="journey-image">
-                        <img src="Public/Zdjęcia na główną/Zdrowy i efektywny zespół.png" alt="Zdrowy i efektywny zespół" class="responsive-image">
-                        <div class="image-overlay">
-                            <div class="overlay-icon result-icon">
-                                <i class="fas fa-trophy"></i>
+                    <div class="step-content">
+                        <h3>Inteligentne Mikroprzerwy</h3>
+                        <div class="solution-points">
+                            <div class="point-item">
+                                <i class="fas fa-robot text-success"></i>
+                                <span>AI monitoruje ruchy</span>
+                            </div>
+                            <div class="point-item">
+                                <i class="fas fa-stopwatch text-success"></i>
+                                <span>Tylko 3-10 minut</span>
+                            </div>
+                            <div class="point-item">
+                                <i class="fas fa-rocket text-success"></i>
+                                <span>Wzrost energii</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-badge result-badge">
-                            <i class="fas fa-chart-line"></i>
-                            EFEKT
-                        </div>
-                        <h3>Zdrowszy i Efektywniejszy Zespół</h3>
-                        <p>Measurable results achieved through smart technology:</p>
-                        <ul class="result-list">
-                            <li><i class="fas fa-arrow-up text-success"></i> +25% produktywności</li>
-                            <li><i class="fas fa-arrow-up text-success"></i> +40% zaangażowania</li>
-                            <li><i class="fas fa-arrow-up text-success"></i> -30% absencji</li>
-                            <li><i class="fas fa-arrow-up text-success"></i> +60% satysfakcji</li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Technology Highlight -->
-            <div class="technology-highlight" data-aos="fade-up" data-aos-delay="300">
-                <div class="tech-container">
-                    <div class="tech-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="tech-content">
-                        <h4>Zaawansowana Technologia AI & Motion Capture</h4>
-                        <p>FIXme wykorzystuje najnowocześniejsze algorytmy sztucznej inteligencji do analizy ruchów ciała w czasie rzeczywistym, zapewniając spersonalizowane wskazówki i maksymalną efektywność ćwiczeń.</p>
-                    </div>
-                    <div class="tech-features">
-                        <div class="tech-feature">
-                            <i class="fas fa-eye"></i>
-                            <span>Analiza postawy</span>
+            <!-- Results Banner -->
+            <div class="results-banner" data-aos="fade-up" data-aos-delay="300">
+                <div class="banner-content">
+                    <h3>Wyniki, które możesz zmierzyć</h3>
+                    <div class="results-grid">
+                        <div class="result-stat">
+                            <div class="stat-number">+25%</div>
+                            <div class="stat-label">Produktywności</div>
                         </div>
-                        <div class="tech-feature">
-                            <i class="fas fa-adjust"></i>
-                            <span>Korekta w czasie rzeczywistym</span>
+                        <div class="result-stat">
+                            <div class="stat-number">+40%</div>
+                            <div class="stat-label">Zaangażowania</div>
                         </div>
-                        <div class="tech-feature">
-                            <i class="fas fa-chart-area"></i>
-                            <span>Śledzenie postępów</span>
+                        <div class="result-stat">
+                            <div class="stat-number">-30%</div>
+                            <div class="stat-label">Absencji</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="stat-number">+60%</div>
+                            <div class="stat-label">Satysfakcji</div>
                         </div>
                     </div>
                 </div>
@@ -437,10 +409,10 @@
             <!-- CTA Section -->
             <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
                 <a href="#demo" class="btn-modern btn-primary btn-lg">
-                    <i class="fas fa-rocket me-2"></i>
-                    Wypróbuj Technologię Motion Capture Za Darmo
+                    <i class="fas fa-play me-2"></i>
+                    Zobacz FIXme w Akcji
                 </a>
-                <p class="mt-3 text-muted">Bez zobowiązań • Natychmiastowy dostęp • Wsparcie 24/7</p>
+                <p class="mt-3 text-muted">Bezpłatne demo • Bez zobowiązań • Natychmiastowy dostęp</p>
             </div>
         </div>
     </section>
@@ -449,10 +421,10 @@
     <section class="section-modern section-padding" id="how-it-works" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9f2ff 100%);">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title text-gradient">Jak Łatwo Wdrożyć FIXme w Twojej Firmie?</h2>
+                <h2 class="section-title text-gradient">Jak Wdrożyć FIXme w 3 Krokach?</h2>
                 <div class="divider"></div>
                 <p class="section-subtitle">
-                    Proste wdrożenie, zaawansowane funkcje i natychmiastowe korzyści. Poznaj trzy filary sukcesu FIXme w Twojej organizacji.
+                    Proste wdrożenie, natychmiastowe korzyści. Poznaj jak FIXme zmienia kulturę zdrowia w firmie.
                 </p>
             </div>
             
@@ -476,14 +448,12 @@
                             <i class="fas fa-cogs"></i>
                             WDROŻENIE
                         </div>
-                        <h3>Błyskawiczne Wdrożenie i Zarządzanie</h3>
-                        <p>Kompletne rozwiązanie gotowe do użycia w kilka minut:</p>
+                        <h3>Szybkie Wdrożenie</h3>
                         <ul class="implementation-features-list">
                             <li><i class="fas fa-bolt text-warning"></i> <strong>Setup w 5 minut</strong></li>
-                            <li><i class="fas fa-users-cog text-primary"></i> <strong>Zarządzanie użytkownikami</strong></li>
-                            <li><i class="fas fa-chart-bar text-success"></i> <strong>Dashboard analytics</strong></li>
-                            <li><i class="fas fa-calendar-alt text-info"></i> <strong>Integracja kalendarzowa</strong></li>
-                            <li><i class="fas fa-shield-alt text-danger"></i> <strong>Bezpieczeństwo</strong></li>
+                            <li><i class="fas fa-users-cog text-primary"></i> <strong>Zarządzanie zespołem</strong></li>
+                            <li><i class="fas fa-chart-bar text-success"></i> <strong>Dashboard analityczny</strong></li>
+                            <li><i class="fas fa-calendar-alt text-info"></i> <strong>Integracja kalendarza</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -506,14 +476,12 @@
                             <i class="fas fa-heartbeat"></i>
                             PERSONALIZACJA
                         </div>
-                        <h3>Indywidualne Podejście do Każdego Pracownika</h3>
-                        <p>Pracownik w centrum uwagi - każdy ma inne potrzeby:</p>
+                        <h3>Dopasowanie Indywidualne</h3>
                         <ul class="implementation-features-list">
-                            <li><i class="fas fa-crosshairs text-danger"></i> <strong>Wybór partii ciała</strong></li>
-                            <li><i class="fas fa-thermometer-half text-warning"></i> <strong>Obszary bólu</strong></li>
+                            <li><i class="fas fa-crosshairs text-danger"></i> <strong>Wybór obszarów ciała</strong></li>
                             <li><i class="fas fa-brain text-primary"></i> <strong>AI dopasowanie</strong></li>
                             <li><i class="fas fa-battery-full text-success"></i> <strong>Redukcja zmęczenia</strong></li>
-                            <li><i class="fas fa-chart-line text-info"></i> <strong>Wzrost efektywności</strong></li>
+                            <li><i class="fas fa-chart-line text-info"></i> <strong>Wzrost energii</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -533,13 +501,11 @@
                             <i class="fas fa-gamepad"></i>
                             MOTYWACJA
                         </div>
-                        <h3>Grywalizacja Która Rzeczywiście Motywuje</h3>
-                        <p>Więcej niż aplikacja - to system budowania zdrowych nawyków:</p>
+                        <h3>System Motywacji</h3>
                         <ul class="implementation-features-list">
-                            <li><i class="fas fa-coins text-warning"></i> <strong>System punktowy</strong></li>
-                            <li><i class="fas fa-medal text-primary"></i> <strong>Odznaki i achievementy</strong></li>
+                            <li><i class="fas fa-coins text-warning"></i> <strong>Punkty za aktywność</strong></li>
+                            <li><i class="fas fa-medal text-primary"></i> <strong>Odznaki i nagrody</strong></li>
                             <li><i class="fas fa-users text-success"></i> <strong>Wyzwania zespołowe</strong></li>
-                            <li><i class="fas fa-gift text-danger"></i> <strong>System nagród</strong></li>
                             <li><i class="fas fa-chart-area text-info"></i> <strong>Rankingi firmowe</strong></li>
                         </ul>
                     </div>
@@ -557,8 +523,8 @@
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <div class="summary-content">
-                        <h4>Kompleksowe Rozwiązanie w Jednej Platformie</h4>
-                        <p>FIXme łączy prostotę wdrożenia z zaawansowanymi funkcjami personalizacji i motywacji, tworząc ekosystem zdrowia i produktywności w Twojej firmie.</p>
+                        <h4>Kompleksowe Rozwiązanie</h4>
+                        <p>FIXme łączy prostotę wdrożenia z zaawansowanymi funkcjami, tworząc ekosystem zdrowia w Twojej firmie.</p>
                     </div>
                     <div class="summary-stats">
                         <div class="stat-badge">
@@ -581,9 +547,9 @@
             <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
                 <a href="#demo" class="btn-modern btn-primary btn-lg">
                     <i class="fas fa-play me-2"></i>
-                    Zobacz FIXme w Akcji - Bezpłatne Demo
+                    Zobacz Demo
                 </a>
-                <p class="mt-3 text-muted">Gotowe do użycia w 5 minut • Bez zobowiązań • Pełne wsparcie</p>
+                <p class="mt-3 text-muted">Gotowe w 5 minut • Bez zobowiązań</p>
             </div>
         </div>
     </section>
@@ -1144,6 +1110,7 @@
                                 <p>Gamifikacja jest kluczowa. Pracownicy zdobywają punkty za każdą sesję i regularność, co buduje pozytywne nawyki. Wyzwania zespołowe dodają element rywalizacji i współpracy, zwiększając zaangażowanie całej firmy.</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 
